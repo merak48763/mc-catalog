@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "condition",
+    "property": "component",
+    "predicate": "custom_data",
+    "value": {"catalog/book": {}},
+    "on_false": {
+      "type": "model",
+      "model": "item/writable_book"
+    },
+    "on_true": {
+      "type": "model",
+      "model": "catalog:item/book"
+    }
+  }
+}

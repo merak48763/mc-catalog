@@ -1,0 +1,11 @@
+use super::registry::PageKey
+
+type PageIndex = (PageKey | PageIndexObject)
+
+struct PageIndexObject {
+  id: PageKey,
+  context?: int @ 0..,
+  linked?: [PageIndex],
+}
+
+dispatch mcdoc:custom_data["catalog/static_index"] to [PageIndex]

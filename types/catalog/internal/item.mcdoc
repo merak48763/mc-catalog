@@ -1,0 +1,17 @@
+dispatch mcdoc:custom_data["catalog/book"] to struct {
+  state?: BookState,
+  baked_book_id?: int,
+}
+
+enum(string) BookState {
+  Idle = "idle",
+  Inspecting = "inspecting",
+  Error = "error",
+}
+
+dispatch mcdoc:custom_data["catalog/button"] to struct {
+  select_page?: struct {
+    page_num?: int @ 0..10,
+  },
+  next_tab?: struct {}
+}

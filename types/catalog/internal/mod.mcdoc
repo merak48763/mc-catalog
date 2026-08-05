@@ -1,0 +1,24 @@
+use ::java::util::text::Text
+use ::java::world::item::ItemStack
+use super::registry::page::PageRegistryEntry
+use baked::BakedBook
+use macro::MacroParamMap
+use transform::TransformIOMap
+use temp::TempDataMap
+
+dispatch minecraft:storage[catalog:zzz] to struct InternalStorage {
+  book?: struct {
+    item?: ItemStack,
+    baked_contents?: BakedBook,
+  },
+  baked_books?: struct {
+    [#[integer] string]: BakedBook,
+  },
+  /// Input/output of `catalog:util/*` functions
+  io?: TransformIOMap,
+  /// Temp data of `catalog:util/*` functions
+  temp?: TempDataMap,
+  /// Macro parameters
+  macro?: MacroParamMap,
+  stack?: [any],
+}

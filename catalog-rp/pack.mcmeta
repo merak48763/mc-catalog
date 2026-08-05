@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "description": {"text": ""},
+    "min_format": 75,
+    "max_format": [88, 0]
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "overlay-88_only",
+        "min_format": 88,
+        "max_format": [88, 0]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+use page::PageRegistry
+use prefix::PrefixRegistry
+
+dispatch minecraft:storage[catalog:registry] to struct RegistryStorage {
+  pages: PageRegistry,
+  prefixes: PrefixRegistry,
+}
+
+type PageKey = page::PageKey
+type PrefixKey = prefix::PrefixKey

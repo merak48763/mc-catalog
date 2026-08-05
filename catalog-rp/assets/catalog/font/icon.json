@@ -1,0 +1,12 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "catalog:font/murcat.png",
+      "chars": [
+        "\ud83d\udc31"
+      ],
+      "ascent": 7
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+use ::java::world::item::ItemStack
+use super::index::PageIndex
+use super::util::ValueHolder
+
+dispatch minecraft:storage[catalog:inspecting_item] to ValueHolder<ItemStack>
+
+dispatch minecraft:storage[catalog:index] to ValueHolder<[PageIndex]>
