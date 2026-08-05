@@ -1,0 +1,28 @@
+use ::java::util::text::Text
+use super::super::registry::page::PageRegistryEntry
+use super::super::registry::page::LookupInsertion
+use super::super::registry::page::BranchInsertion
+use super::super::registry::page::WrappedInsertion
+use super::super::registry::page::BaseFormattableInsertion
+
+struct TempDataMap {
+  get_item_name?: struct {
+    text_component?: Text,
+  },
+  bake_page?: struct {
+    /// Entry loaded from registry
+    page_definition?: PageRegistryEntry,
+  },
+  single_insertion?: struct {
+    /// Spyglass type check workaround
+    lookup?: LookupInsertion,
+    /// Spyglass type check workaround
+    branch?: BranchInsertion,
+    /// Spyglass type check workaround
+    wrapped?: WrappedInsertion,
+    /// Spyglass type check workaround
+    formattable?: BaseFormattableInsertion,
+    /// Unformatted output before applying style override
+    raw_result?: Text,
+  },
+}

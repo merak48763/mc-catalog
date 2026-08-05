@@ -1,0 +1,35 @@
+use super::super::registry::PageKey
+use super::super::registry::PrefixKey
+
+struct MacroParamMap {
+  /// - `catalog:baked_books/delete`
+  /// - `catalog:baked_books/read`
+  /// - `catalog:baked_books/write`
+  baked_book?: struct {
+    id?: int,
+  },
+  /// - `catalog:util/bake_page/read_page_definition`
+  page_registry?: struct {
+    key?: PageKey,
+  },
+  /// - `catalog:util/bake_page/generate_line/set_prefix`
+  prefix_registry?: struct {
+    key?: PrefixKey,
+  },
+  /// - `catalog:modify_book/update_active_book/select_page/append_contents`
+  /// - `catalog:util/single_insertion/lookup/select_text/from_lut`
+  list_access?: struct {
+    index?: int,
+  },
+  /// - `catalog:util/get_item_name/from_base_color/translate`
+  shield_name?: struct {
+    base_color?: minecraft:data_component[base_color],
+  },
+  /// - `catalog:util/bake_page/generate_title/translate_effect`
+  /// - `catalog:util/bake_page/generate_title/translate_enchantment`
+  /// - `catalog:util/single_insertion/translation_key/effect_amplifier`
+  /// - `catalog:util/single_insertion/translation_key/enchantment_level`
+  translate_lvl?: struct {
+    value?: int,
+  },
+}

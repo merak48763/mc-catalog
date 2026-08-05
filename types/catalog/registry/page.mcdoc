@@ -1,0 +1,98 @@
+use ::java::util::text::Text
+use ::java::util::text::TranslatedText
+use ::java::util::text::TextStyle
+use super::PrefixKey
+
+type PageKey = #[dispatcher_key="catalog:keys/page"] string
+
+struct PageRegistry {
+  [PageKey]: PageRegistryEntry,
+}
+
+struct PageRegistryEntry {
+  /// Defaults to `none`.
+  context_type?: ContextType,
+  /// Defaults to `4603950`.
+  button_color?: #[color="composite_rgb"] int,
+  /// Title of the page. \
+  /// The default style is white & non-italic.
+  title: Text,
+  /// Text lines displayed in the book item's lore.
+  lines: [DescriptionLine],
+  /// Common text style applied to `lines`. \
+  /// Defaults to color `#f0f0f0` & non-italic. \
+  /// **Note:** prefix is also affected.
+  base_style?: TextStyle,
+}
+
+//type DescriptionLine = [PrefixKey, Text]
+
+struct DescriptionLine {
+  /// Defaults to `empty`.
+  prefix?: PrefixKey,
+  content: Text,
+  with_override?: [Insertion],
+}
+
+struct Insertion {
+  /// Defaults to `text`.
+  type?: InsertionType,
+  ...catalog:insertion[[type]],
+}
+
+struct BaseFormattableInsertion {
+  /// Text style applied to the generated value.
+  base_style?: TextStyle,
+}
+
+dispatch catalog:insertion[%none, text] to struct TextInsertion {
+  value: Text,
+}
+
+dispatch catalog:insertion[lookup] to struct LookupInsertion {
+  /// Value to use when the context is empty.
+  generic: Text,
+  /// When the context is provided, the corresponding value in the list is selected.
+  values: [Text],
+  /// Value to use when there is no matching value in `values`. \
+  /// If not present, `generic` is used instead.
+  fallback?: Text,
+  ...BaseFormattableInsertion,
+}
+
+dispatch catalog:insertion[branch] to struct BranchInsertion {
+  /// Value to use when the context is empty.
+  generic: Text,
+  /// The value to compare with the provided context.
+  threshold: int,
+  /// Insertion to use when context ≤ threshold. \
+  /// If not present, `generic` is used instead.
+  on_le?: Insertion,
+  /// Insertion to use when context > threshold. \
+  /// If not present, `generic` is used instead.
+  on_gt?: Insertion,
+  ...BaseFormattableInsertion,
+}
+
+dispatch catalog:insertion[wrapped] to struct WrappedInsertion {
+  base: TranslatedText,
+  with_override?: [Insertion],
+}
+
+dispatch catalog:insertion[effect_amplifier, enchantment_level] to BaseFormattableInsertion
+
+enum(string) ContextType {
+  None = "none",
+  EnchantmentLevel = "enchantment",
+  EnchantmentLevelLv1 = "enchantment_lv1",
+  EffectAmplifier = "effect",
+}
+
+enum(string) InsertionType {
+  TextComponent = "text",
+  ValueLookup = "lookup",
+  Branch = "branch",
+  Wrapped = "wrapped",
+  EffectAmplifier = "effect_amplifier",
+  EnchantmentLevel = "enchantment_level",
+}

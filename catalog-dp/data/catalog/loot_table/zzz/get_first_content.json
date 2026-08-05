@@ -1,0 +1,25 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "slots",
+          "slot_source": {
+            "type": "limit_slots",
+            "limit": 1,
+            "slot_source": {
+              "type": "contents",
+              "component": "bundle_contents",
+              "slot_source": {
+                "type": "slot_range",
+                "source": "this",
+                "slots": "contents"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+use ::java::util::text::Text
+use ::java::world::item::ItemStack
+
+struct BakedBook {
+  active_tab?: BakedTab,
+  hidden_tabs?: [BakedTab],
+}
+
+type BakedTab = [BakedPage] @ ..11
+
+struct BakedPage {
+  lore?: [Text],
+  button: ItemStack,
+}

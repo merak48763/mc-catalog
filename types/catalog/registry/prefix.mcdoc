@@ -1,0 +1,7 @@
+use ::java::util::text::Text
+
+type PrefixKey = #[dispatcher_key="catalog:keys/prefix"] string
+
+struct PrefixRegistry {
+  [PrefixKey]: Text,
+}

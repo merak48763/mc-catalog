@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.ref }}
 
@@ -21,38 +21,38 @@ jobs:
 
       - name: Zip datapack
         run: |
-          cd datapack
-          cp ../packed_readme.md README.md
+          cd catalog-dp
+          cp ../short_readme.md README.md
           cp ../LICENSE LICENSE
-          zip -r ../dist/mc-codex-dp-${GITHUB_REF_NAME}.zip .
+          zip -r ../dist/catalog-dp-${GITHUB_REF_NAME}.zip .
           cd ..
 
       - name: Zip resourcepack
         run: |
-          cd resourcepack
-          cp ../packed_readme.md README.md
+          cd catalog-rp
+          cp ../short_readme.md README.md
           cp ../LICENSE LICENSE
-          zip -r ../dist/mc-codex-rp-${GITHUB_REF_NAME}.zip .
+          zip -r ../dist/catalog-rp-${GITHUB_REF_NAME}.zip .
           cd ..
 
       - name: Zip mcdoc
         run: |
-          cd mcdoc
-          zip -r ../dist/codex-mcdoc.zip .
+          cd types
+          zip -r ../dist/catalog-mcdoc.zip .
           cd ..
 
       - name: Upload release assets
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: ./dist/*.zip
 
-      - name: Send notification to Discord
+      - name: Send Discord notification
         if: always()
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          embed-title: "[${{ github.event.repository.name }}] automated release"
-          embed-url: "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          embed-title: '[${{ github.event.repository.name }}] automated release'
+          embed-url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
           embed-description: |
             **Tag**: ${{ github.ref_name }}
             **Status**: ${{ job.status }}

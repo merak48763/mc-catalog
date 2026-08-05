@@ -1,0 +1,24 @@
+use ::java::util::text::Text
+use ::java::world::item::ItemStack
+use super::super::index::PageIndex
+use super::super::registry::page::Insertion
+use super::baked::BakedBook
+use super::baked::BakedPage
+
+struct TransformIOMap {
+  /// Item stack → wrapped translated item name
+  get_item_name?: Transform<ItemStack, Text>,
+  /// Page indexes → baked book
+  bake_book?: Transform<[PageIndex], BakedBook>,
+  /// Page index → baked book page
+  bake_page?: Transform<PageIndex, BakedPage>,
+  /// Insertion definition list → insertion text list
+  resolve_insertions?: Transform<[Insertion], [Text]>,
+  /// Insertion definition → insertion text
+  single_insertion?: Transform<Insertion, Text>,
+}
+
+type Transform<I, O> = struct {
+  in?: I,
+  out?: O,
+}
