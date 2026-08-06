@@ -2,9 +2,19 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/merak48763/mc-catalog?style=for-the-badge&logo=github&color=6e6)](https://github.com/merak48763/mc-catalog/releases/latest)
 
+![The Universe Cat](doc_images/murcat.png)
+
 Adapted from the Lexica module of [pearuhdox/Cartographer-2.0](https://github.com/pearuhdox/Cartographer-2.0).  
 Target Minecraft version: 1.21.11 ~ 26.2  
 Check `v1.4.4` tag for legacy version.
+
+# Showcase
+
+<img src="doc_images/showcase_1.png" alt="Unbreaking III on an Iron Helmet" width="600">
+
+<img src="doc_images/showcase_2.png" alt="Arrow of Slowness" width="600">
+
+<img src="doc_images/showcase_3.png" alt="Mending on a Shield with green background and black Creeper pattern" width="600">
 
 # Get the Book
 
@@ -132,8 +142,8 @@ Data register should happen in `#catalog:register_data` function tag.
 
 ### Example
 
-```
-# Defines the "root leve dot" prefix
+```mcfunction
+# Defines the "root level dot" prefix
 data modify storage catalog:registry prefixes.d set value {text: "◆ ", color: "#ffdd99"}
 ```
 
