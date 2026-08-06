@@ -1,12 +1,12 @@
 [
   {
-    "type": "set_custom_data",
+    "function": "set_custom_data",
     "tag": {
       "catalog/book": {"state": "error"}
     }
   },
   {
-    "type": "set_lore",
+    "function": "set_lore",
     "mode": "replace_all",
     "lore": [
       {"translate": "catalog.book.too_many_items.1", "fallback": "Found more than 1 item stack.", "color": "#ff8888", "italic": false},

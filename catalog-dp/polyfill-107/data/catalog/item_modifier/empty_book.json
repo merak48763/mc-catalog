@@ -1,17 +1,17 @@
 [
   {
-    "type": "set_custom_data",
+    "function": "set_custom_data",
     "tag": {
       "catalog/book": {"state": "idle"}
     }
   },
   {
-    "type": "set_contents",
+    "function": "set_contents",
     "component": "bundle_contents",
     "entries": []
   },
   {
-    "type": "set_lore",
+    "function": "set_lore",
     "mode": "replace_all",
     "lore": [
       {"translate": "catalog.book.empty.1", "fallback": "Place an item in this book", "color": "white", "italic": false},
