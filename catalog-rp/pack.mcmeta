@@ -2,12 +2,12 @@
   "pack": {
     "description": {"text": ""},
     "min_format": 75,
-    "max_format": [88, 0]
+    "max_format": [95, 0]
   },
   "overlays": {
     "entries": [
       {
-        "directory": "overlay-88_only",
+        "directory": "overlay-88",
         "min_format": 88,
         "max_format": [88, 0]
       }

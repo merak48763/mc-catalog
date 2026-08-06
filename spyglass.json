@@ -2,7 +2,8 @@
   "env": {
     "exclude": [
       "catalog-dp/data/catalog/function/load/registry/pages.mcfunction",
-      "*/overlay-*/**"
+      "*/overlay-*/**",
+      "*/polyfill-*/**"
     ]
   }
 }
