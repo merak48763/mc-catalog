@@ -1210,7 +1210,6 @@ data modify storage catalog:registry pages."effect/luck" set value { \
   ], \
   context_type: "effect", button_color: 5882118 \
 }
-# Lookup table has reflected MC-279819
 data modify storage catalog:registry pages."effect/mining_fatigue" set value { \
   title: {translate: "effect.minecraft.mining_fatigue", color: "red"}, \
   lines: [ \
@@ -1230,8 +1229,8 @@ data modify storage catalog:registry pages."effect/mining_fatigue" set value { \
       content: {translate: "attribute.modifier.take.1", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["70", "91", "99.73"], \
-          fallback: "99.92", \
+          type: "lookup", values: ["70", "91", "97.3", "99.19", "99.76"], \
+          fallback: "99.93", \
           generic: {translate: "catalog.desc.effect.mining_fatigue.2.1_g", fallback: "[(1 - (0.3 ^ lvl)) * 100]"} \
         }, \
         {value: {translate: "attribute.name.block_break_speed", color: "#ffcccc"}} \
