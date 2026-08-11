@@ -12,7 +12,8 @@ struct PageRegistry {
 struct PageRegistryEntry {
   /// Defaults to `none`.
   context_type?: ContextType,
-  /// Defaults to `4603950`.
+  /// Defaults to `4603950` (`0x46402e`).
+  #[deprecated="26.3"]
   button_color?: #[color="composite_rgb"] int,
   /// Title of the page. \
   /// The default style is white & non-italic.

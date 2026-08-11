@@ -5,7 +5,7 @@
 ![The Universe Cat](doc_images/murcat.png)
 
 Adapted from the Lexica module of [pearuhdox/Cartographer-2.0](https://github.com/pearuhdox/Cartographer-2.0).  
-Target Minecraft version: 1.21.11 ~ 26.2  
+Target Minecraft version: 1.21.11 ~ 26.3  
 Check `v1.4.4` tag for legacy version.
 
 # Showcase
@@ -49,6 +49,7 @@ Data register should happen in `#catalog:register_data` function tag.
     - `"enchantment_lv1"`: Similar to `enchantment`. Title reflects the behavior of enchantment with max level 1.
     - `"effect"`: Title and contents may change based on a value starting from 0 (effect amplifier).
   - `button_color` \[Optional int\]: The color of GUI element, which uses `filled_map` item model. Defaults to `0x46402e` (defined in the item model).
+    - Starting from 26.3, this field is not useful anymore because the color is not visible without a resource pack.
 
 ### Line Object
 
@@ -250,12 +251,15 @@ The resource pack provides additional features:
 - All texts in this pack are translatable.
 - You can find two translation categories:
   - `assets/catalog/lang/`: Core texts.
-  - `assets/catalog.desc/lang`: Description texts.
+  - `assets/catalog.desc/lang/`: Description texts.
 
 ## Customize Button Texture
 
-- Regular buttons use `filled_map` item model.
-  - The description name is passed into `custom_model_data.strings[0]`
+- \[Until 26.3\] Regular buttons use `filled_map` item model.  
+  \[Since 26.3\] Regular buttons use `map` item model.
+  - The description name is passed into `custom_model_data.strings[0]`.
+  - \[Until 26.3\] Button color is passed into `map_color`.
+  - \[Since 26.3\] Button color is passed into `custom_model_data.colors[0]`.
 - "Next page" button uses `feather` item model.
 - "No information" button uses `barrier` item model.
 
