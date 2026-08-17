@@ -1,21 +1,24 @@
-[
-  {
-    "type": "set_custom_data",
-    "tag": {
-      "catalog/book": {"state": "idle"}
+{
+  "type": "sequence",
+  "functions": [
+    {
+      "type": "set_custom_data",
+      "tag": {
+        "catalog/book": {"state": "idle"}
+      }
+    },
+    {
+      "type": "set_contents",
+      "component": "bundle_contents",
+      "entries": []
+    },
+    {
+      "type": "set_lore",
+      "mode": "replace_all",
+      "lore": [
+        {"translate": "catalog.book.empty.1", "fallback": "Place an item in this book", "color": "white", "italic": false},
+        {"translate": "catalog.book.empty.2", "fallback": "to learn more about it.", "color": "white", "italic": false}
+      ]
     }
-  },
-  {
-    "type": "set_contents",
-    "component": "bundle_contents",
-    "entries": []
-  },
-  {
-    "type": "set_lore",
-    "mode": "replace_all",
-    "lore": [
-      {"translate": "catalog.book.empty.1", "fallback": "Place an item in this book", "color": "white", "italic": false},
-      {"translate": "catalog.book.empty.2", "fallback": "to learn more about it.", "color": "white", "italic": false}
-    ]
-  }
-]
+  ]
+}
