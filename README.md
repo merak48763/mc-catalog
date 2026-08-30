@@ -106,7 +106,9 @@ Generates effect amplifier text based on **Context Value**.
 - `generic` \[Text component\]: The text to insert if **Context Value** is not present.
 - `use_int_mode` \[Optional boolean\]: Whether to resolve the formula in integer mode. Defaults to `false`.
 
-### Example
+### Examples
+
+#### 26.2
 
 ```mcfunction
 # Defines the description of Smite enchantment
@@ -120,6 +122,30 @@ data modify storage catalog:registry pages."enchantment/smite" set value { \
       with_override: [ \
         { \
           type: "lookup", values: ["2.5", "5", "7.5", "10", "12.5", "15", "17.5", "20", "22.5", "25"], \
+          generic: {translate: "catalog.desc.enchantment.smite.2.1_g", fallback: "[2.5 * lvl]"} \
+        }, \
+        {value: {translate: "catalog.desc.enchantment.smite.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
+      ] \
+    } \
+  ], \
+  context_type: "enchantment", button_color: 11141375 \
+}
+```
+
+#### 26.3
+
+```mcfunction
+# Defines the description of Smite enchantment
+data modify storage catalog:registry pages."enchantment/smite" set value { \
+  title: {translate: "enchantment.minecraft.smite", color: "#cc88ff"}, \
+  lines: [ \
+    {prefix: "c", content: {translate: "catalog.desc.enchantment.smite.1", fallback: "When attacking undead mobs:", color: "#ccb17a"}}, \
+    { \
+      prefix: "c+a", \
+      content: {translate: "catalog.desc.enchantment.smite.2", fallback: "+%s %s", color: "#8888ff"}, \
+      with_override: [ \
+        { \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/2.5", \
           generic: {translate: "catalog.desc.enchantment.smite.2.1_g", fallback: "[2.5 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.smite.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
