@@ -1,0 +1,4 @@
+{
+  "type": "product",
+  "operands": [0.5, "catalog:formula/effect/level"]
+}

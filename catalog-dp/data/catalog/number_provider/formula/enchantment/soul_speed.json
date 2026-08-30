@@ -1,0 +1,10 @@
+{
+  "type": "sum",
+  "operands": [
+    30,
+    {
+      "type": "product",
+      "operands": [10.5, "catalog:context"]
+    }
+  ]
+}

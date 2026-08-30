@@ -1,0 +1,4 @@
+{
+  "type": "sum",
+  "operands": [2, "catalog:context"]
+}
