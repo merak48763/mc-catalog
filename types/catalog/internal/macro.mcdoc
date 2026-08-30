@@ -21,6 +21,10 @@ struct MacroParamMap {
   list_access?: struct {
     index?: int,
   },
+  /// - `catalog:util/single_insertion/compute/select_text/resolve_number`
+  resolve_number?: struct {
+    number_provider?: #[id="number_provider"] string,
+  },
   /// - `catalog:util/get_item_name/from_base_color/translate`
   shield_name?: struct {
     base_color?: minecraft:data_component[base_color],

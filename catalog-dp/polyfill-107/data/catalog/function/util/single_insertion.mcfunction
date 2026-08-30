@@ -1,5 +1,3 @@
-# polyfills: 107.1
-
 # in: insertion definition
 # out: insertion text
 # extra input: score #context/*
@@ -15,9 +13,6 @@ execute unless data storage catalog:zzz io.single_insertion.in.type \
 # "lookup" type
 execute if data storage catalog:zzz io.single_insertion.in{type: "lookup"} \
   run return run function catalog:util/single_insertion/lookup
-# "compute" type
-execute if data storage catalog:zzz io.single_insertion.in{type: "compute"} \
-  run return run function catalog:util/single_insertion/compute
 # "branch" type
 execute if data storage catalog:zzz io.single_insertion.in{type: "branch"} \
   run return run function catalog:util/single_insertion/branch

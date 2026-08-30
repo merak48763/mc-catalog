@@ -1,0 +1,5 @@
+{
+  "type": "score",
+  "target": {"type": "fixed", "name": "#context/value"},
+  "score": "catalog.var"
+}

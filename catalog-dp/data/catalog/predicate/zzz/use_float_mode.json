@@ -1,0 +1,9 @@
+{
+  "type": "value_check",
+  "value": {
+    "type": "storage",
+    "storage": "catalog:zzz",
+    "path": "temp.single_insertion.compute.use_int_mode"
+  },
+  "range": 0
+}

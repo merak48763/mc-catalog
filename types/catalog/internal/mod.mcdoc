@@ -19,4 +19,5 @@ dispatch minecraft:storage[catalog:zzz] to struct InternalStorage {
   /// Macro parameters
   macro?: MacroParamMap,
   stack?: [any],
+  cmp?: any,
 }
