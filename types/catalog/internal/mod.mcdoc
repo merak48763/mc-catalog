@@ -1,6 +1,4 @@
-use ::java::util::text::Text
 use ::java::world::item::ItemStack
-use super::registry::page::PageRegistryEntry
 use baked::BakedBook
 use macro::MacroParamMap
 use transform::TransformIOMap

@@ -1,5 +1,6 @@
 use ::java::util::text::Text
 use ::java::util::text::TranslatedText
+type TranslationArg = Text // use ::java::util::text::TranslationArg
 use ::java::util::text::TextStyle
 use super::PrefixKey
 
@@ -26,8 +27,6 @@ struct PageRegistryEntry {
   base_style?: TextStyle,
 }
 
-//type DescriptionLine = [PrefixKey, Text]
-
 struct DescriptionLine {
   /// Defaults to `empty`.
   prefix?: PrefixKey,
@@ -47,23 +46,23 @@ struct BaseFormattableInsertion {
 }
 
 dispatch catalog:insertion[%none, text] to struct TextInsertion {
-  value: Text,
+  value: TranslationArg,
 }
 
 dispatch catalog:insertion[lookup] to struct LookupInsertion {
   /// Value to use when the context is empty.
-  generic: Text,
+  generic: TranslationArg,
   /// When the context is provided, the corresponding value in the list is selected.
-  values: [Text],
+  values: [TranslationArg],
   /// Value to use when there is no matching value in `values`. \
   /// If not present, `generic` is used instead.
-  fallback?: Text,
+  fallback?: TranslationArg,
   ...BaseFormattableInsertion,
 }
 
 dispatch catalog:insertion[branch] to struct BranchInsertion {
   /// Value to use when the context is empty.
-  generic: Text,
+  generic: TranslationArg,
   /// The value to compare with the provided context.
   threshold: int,
   /// Insertion to use when context ≤ threshold. \

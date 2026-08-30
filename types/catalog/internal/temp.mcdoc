@@ -1,4 +1,5 @@
 use ::java::util::text::Text
+type TranslationArg = Text // use ::java::util::text::TranslationArg
 use super::super::registry::page::PageRegistryEntry
 use super::super::registry::page::LookupInsertion
 use super::super::registry::page::BranchInsertion
@@ -23,6 +24,6 @@ struct TempDataMap {
     /// Spyglass type check workaround
     formattable?: BaseFormattableInsertion,
     /// Unformatted output before applying style override
-    raw_result?: Text,
+    raw_result?: TranslationArg,
   },
 }
