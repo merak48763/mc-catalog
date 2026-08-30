@@ -97,6 +97,15 @@ Generates effect amplifier text based on **Context Value**.
 
 - `base_style` \[Optional text style\]: The style to apply on the generated text.
 
+#### When `type: "compute"`:
+
+\[Since 26.3\]
+
+- `formula` \[Number provider ID\]: The number provider to compute the insertion value.
+  - The **Context Value** is provided by `catalog:context` number provider.
+- `generic` \[Text component\]: The text to insert if **Context Value** is not present.
+- `use_int_mode` \[Optional boolean\]: Whether to resolve the formula in integer mode. Defaults to `false`.
+
 ### Example
 
 ```mcfunction
