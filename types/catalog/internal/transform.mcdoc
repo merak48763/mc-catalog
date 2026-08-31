@@ -1,5 +1,5 @@
 use ::java::util::text::Text
-type TranslationArg = Text // use ::java::util::text::TranslationArg
+use ::java::util::text::TranslationArg
 use ::java::world::item::ItemStack
 use super::super::index::PageIndex
 use super::super::registry::page::Insertion

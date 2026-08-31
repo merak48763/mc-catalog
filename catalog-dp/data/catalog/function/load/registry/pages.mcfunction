@@ -385,7 +385,7 @@ data modify storage catalog:registry pages."enchantment/blast_protection" set va
       with_override: [ \
         { \
           type: "lookup", values: ["0.15", "0.3", "0.45", "0.6", "0.75", "0.9"], \
-          fallback: "1", \
+          fallback: 1, \
           generic: {translate: "catalog.desc.enchantment.blast_protection.1.1_g", fallback: "[0.15 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.explosion_knockback_resistance", color: "#ccccff"}} \
@@ -397,8 +397,8 @@ data modify storage catalog:registry pages."enchantment/blast_protection" set va
       content: {translate: "catalog.desc.enchantment.blast_protection.3", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["8", "16", "24", "32", "40", "48", "56", "64", "72"], \
-          fallback: "80", \
+          type: "lookup", values: [8, 16, 24, 32, 40, 48, 56, 64, 72], \
+          fallback: 80, \
           generic: {translate: "catalog.desc.enchantment.blast_protection.3.1_g", fallback: "[8 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.blast_protection.3.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -417,8 +417,8 @@ data modify storage catalog:registry pages."enchantment/fire_protection" set val
       content: {translate: "attribute.modifier.take.1", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["15", "30", "45", "60", "75", "90"], \
-          fallback: "100", \
+          type: "lookup", values: [15, 30, 45, 60, 75, 90], \
+          fallback: 100, \
           generic: {translate: "catalog.desc.enchantment.fire_protection.1.1_g", fallback: "[15 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.burning_time", color: "#ccccff"}} \
@@ -430,8 +430,8 @@ data modify storage catalog:registry pages."enchantment/fire_protection" set val
       content: {translate: "catalog.desc.enchantment.fire_protection.3", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["8", "16", "24", "32", "40", "48", "56", "64", "72"], \
-          fallback: "80", \
+          type: "lookup", values: [8, 16, 24, 32, 40, 48, 56, 64, 72], \
+          fallback: 80, \
           generic: {translate: "catalog.desc.enchantment.fire_protection.3.1_g", fallback: "[8 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.fire_protection.3.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -451,8 +451,8 @@ data modify storage catalog:registry pages."enchantment/projectile_protection" s
       content: {translate: "catalog.desc.enchantment.projectile_protection.2", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["8", "16", "24", "32", "40", "48", "56", "64", "72"], \
-          fallback: "80", \
+          type: "lookup", values: [8, 16, 24, 32, 40, 48, 56, 64, 72], \
+          fallback: 80, \
           generic: {translate: "catalog.desc.enchantment.projectile_protection.2.1_g", fallback: "[8 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.projectile_protection.2.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -472,8 +472,8 @@ data modify storage catalog:registry pages."enchantment/feather_falling" set val
       content: {translate: "catalog.desc.enchantment.feather_falling.2", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["12", "24", "36", "48", "60", "72"], \
-          fallback: "80", \
+          type: "lookup", values: [12, 24, 36, 48, 60, 72], \
+          fallback: 80, \
           generic: {translate: "catalog.desc.enchantment.feather_falling.2.1_g", fallback: "[12 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.feather_falling.2.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -550,8 +550,8 @@ data modify storage catalog:registry pages."enchantment/quick_charge" set value 
       content: {translate: "catalog.desc.enchantment.quick_charge.1", fallback: "-%ss %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.25", "0.5", "0.75", "1"], \
-          fallback: "1.25", \
+          type: "lookup", values: [0.25, 0.5, 0.75, 1], \
+          fallback: 1.25, \
           generic: {translate: "catalog.desc.enchantment.quick_charge.1.1_g", fallback: "[0.25 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.quick_charge.1.2", fallback: "Crossbow charging time", color: "#f0f0f0"}} \
@@ -573,7 +573,7 @@ data modify storage catalog:registry pages."enchantment/lure" set value { \
           type: "wrapped", base: {translate: "catalog.desc.enchantment.lure.1", fallback: "-%ss %s"}, \
           with_override: [ \
             { \
-              type: "lookup", values: ["5", "10", "15", "20", "25"], \
+              type: "lookup", values: [5, 10, 15, 20, 25], \
               generic: "<never>" \
             }, \
             {value: {translate: "catalog.desc.enchantment.lure.1.2", fallback: "Fish bite time", color: "#f0f0f0"}} \
@@ -682,7 +682,7 @@ data modify storage catalog:registry pages."enchantment/depth_strider" set value
       with_override: [ \
         { \
           type: "lookup", values: ["0.33", "0.67"], \
-          fallback: "1", \
+          fallback: 1, \
           generic: {translate: "catalog.desc.enchantment.depth_strider.1.1_g", fallback: "[lvl / 3]"} \
         }, \
         {value: {translate: "attribute.name.water_movement_efficiency", color: "#ccccff"}} \
@@ -1042,7 +1042,7 @@ data modify storage catalog:registry pages."effect/instant_damage" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.2", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: ["6", "12", "24", "48", "96", "192"], \
+        type: "lookup", values: [6, 12, 24, 48, 96, 192], \
         generic: {translate: "catalog.desc.effect.instant_damage.2.1_g", fallback: "[3 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1052,7 +1052,7 @@ data modify storage catalog:registry pages."effect/instant_damage" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.4", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: ["4", "8", "16", "32", "64", "128"], \
+        type: "lookup", values: [4, 8, 16, 32, 64, 128], \
         generic: {translate: "catalog.desc.effect.instant_damage.4.1_g", fallback: "[2 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1068,7 +1068,7 @@ data modify storage catalog:registry pages."effect/instant_damage/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.2", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: ["3", "6", "12", "24", "48", "96"], \
+        type: "lookup", values: [3, 6, 12, 24, 48, 96], \
         generic: {translate: "catalog.desc.effect.instant_damage.2.1_g_lingering", fallback: "[1.5 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1078,7 +1078,7 @@ data modify storage catalog:registry pages."effect/instant_damage/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.4", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: ["2", "4", "8", "16", "32", "64"], \
+        type: "lookup", values: [2, 4, 8, 16, 32, 64], \
         generic: {translate: "catalog.desc.effect.instant_damage.4.1_g_lingering", fallback: "[2 ^ lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1094,7 +1094,7 @@ data modify storage catalog:registry pages."effect/instant_health" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.2", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: ["4", "8", "16", "32", "64", "128"], \
+        type: "lookup", values: [4, 8, 16, 32, 64, 128], \
         generic: {translate: "catalog.desc.effect.instant_health.2.1_g", fallback: "[2 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1104,7 +1104,7 @@ data modify storage catalog:registry pages."effect/instant_health" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.4", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: ["6", "12", "24", "48", "96", "192"], \
+        type: "lookup", values: [6, 12, 24, 48, 96, 192], \
         generic: {translate: "catalog.desc.effect.instant_health.4.1_g", fallback: "[3 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1120,7 +1120,7 @@ data modify storage catalog:registry pages."effect/instant_health/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.2", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: ["2", "4", "8", "16", "32", "64"], \
+        type: "lookup", values: [2, 4, 8, 16, 32, 64], \
         generic: {translate: "catalog.desc.effect.instant_health.2.1_g_lingering", fallback: "[2 ^ lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1130,7 +1130,7 @@ data modify storage catalog:registry pages."effect/instant_health/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.4", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: ["3", "6", "12", "24", "48", "96"], \
+        type: "lookup", values: [3, 6, 12, 24, 48, 96], \
         generic: {translate: "catalog.desc.effect.instant_health.4.1_g_lingering", fallback: "[1.5 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1149,7 +1149,7 @@ data modify storage catalog:registry pages."effect/invisibility" set value { \
       prefix: "d", \
       content: { \
         translate: "attribute.modifier.take.2", \
-        with: ["100", {translate: "attribute.name.waypoint_transmit_range"}], \
+        with: [100, {translate: "attribute.name.waypoint_transmit_range"}], \
         color: "#cccccc" \
       } \
     } \
@@ -1285,8 +1285,8 @@ data modify storage catalog:registry pages."effect/raid_omen" set value { \
       prefix: "c+a", \
       content: {translate: "catalog.desc.effect.raid_omen.2", fallback: "Starts a raid (Level %s)"}, \
       with_override: [{ \
-        type: "lookup", values: ["1", "2", "3", "4"], \
-        fallback: "5", \
+        type: "lookup", values: [1, 2, 3, 4], \
+        fallback: 5, \
         generic: {translate: "catalog.desc.effect.raid_omen.2.1_g", fallback: "[lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1319,8 +1319,8 @@ data modify storage catalog:registry pages."effect/resistance" set value { \
       content: {translate: "catalog.desc.effect.resistance.1", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["20", "40", "60", "80"], \
-          fallback: "100", \
+          type: "lookup", values: [20, 40, 60, 80], \
+          fallback: 100, \
           generic: {translate: "catalog.desc.effect.resistance.1.1_g", fallback: "[20 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.effect.resistance.1.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -1385,8 +1385,8 @@ data modify storage catalog:registry pages."effect/slowness" set value { \
       content: {translate: "attribute.modifier.take.2", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["15", "30", "45", "60", "75", "90"], \
-          fallback: "100", \
+          type: "lookup", values: [15, 30, 45, 60, 75, 90], \
+          fallback: 100, \
           generic: {translate: "catalog.desc.effect.slowness.1.1_g", fallback: "[15 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.movement_speed", color: "#ffcccc"}} \
@@ -1494,7 +1494,7 @@ data modify storage catalog:registry pages."effect/weaving" set value { \
       content: { \
         translate: "catalog.desc.effect.weaving.1", fallback: "-%s%% %s", \
         with: [ \
-          "50", \
+          50, \
           {translate: "catalog.desc.effect.weaving.1.2", fallback: "Slowdown effect of Cobweb", color: "#f0f0f0"} \
         ], \
         color: "#8888ff" \

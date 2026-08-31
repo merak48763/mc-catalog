@@ -1,6 +1,6 @@
 use ::java::util::text::Text
 use ::java::util::text::TranslatedText
-type TranslationArg = Text // use ::java::util::text::TranslationArg
+use ::java::util::text::TranslationArg
 use ::java::util::text::TextStyle
 use super::PrefixKey
 
