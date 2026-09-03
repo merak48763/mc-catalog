@@ -71,7 +71,7 @@ data modify storage catalog:registry pages."enchantment/frost_walker" set value 
       prefix: "c+a", \
       content: {translate: "catalog.desc.enchantment.frost_walker.4", fallback: "Frosts water surface within %s blocks"}, \
       with_override: [{ \
-        type: "lookup", values: ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], \
+        type: "compute", formula: "catalog:formula/enchantment/frost_walker", mode: "integer", \
         generic: {translate: "catalog.desc.enchantment.frost_walker.4.1_g", fallback: "[2 + lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -91,7 +91,7 @@ data modify storage catalog:registry pages."enchantment/lunge" set value { \
       content: {translate: "catalog.desc.enchantment.lunge.5", fallback: "Consumes %s food point%s"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.lunge.5.1_g", fallback: "[lvl]"}, \
           base_style: {color: "#ff88ff"} \
         }, \
@@ -113,7 +113,7 @@ data modify storage catalog:registry pages."enchantment/sharpness" set value { \
       content: {translate: "catalog.desc.enchantment.sharpness.1", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5"], \
+          type: "compute", formula: "catalog:formula/enchantment/sharpness", \
           generic: {translate: "catalog.desc.enchantment.sharpness.1.1_g", fallback: "[0.5 + (0.5 * lvl)]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.sharpness.1.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
@@ -131,7 +131,7 @@ data modify storage catalog:registry pages."enchantment/smite" set value { \
       content: {translate: "catalog.desc.enchantment.smite.2", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["2.5", "5", "7.5", "10", "12.5", "15", "17.5", "20", "22.5", "25"], \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/2.5", \
           generic: {translate: "catalog.desc.enchantment.smite.2.1_g", fallback: "[2.5 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.smite.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
@@ -149,7 +149,7 @@ data modify storage catalog:registry pages."enchantment/bane_of_arthropods" set 
       content: {translate: "catalog.desc.enchantment.bane_of_arthropods.2", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["2.5", "5", "7.5", "10", "12.5", "15", "17.5", "20", "22.5", "25"], \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/2.5", \
           generic: {translate: "catalog.desc.enchantment.bane_of_arthropods.2.1_g", fallback: "[2.5 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.bane_of_arthropods.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
@@ -183,7 +183,7 @@ data modify storage catalog:registry pages."enchantment/impaling" set value { \
       content: {translate: "catalog.desc.enchantment.impaling.2", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["2.5", "5", "7.5", "10", "12.5", "15", "17.5", "20", "22.5", "25"], \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/2.5", \
           generic: {translate: "catalog.desc.enchantment.impaling.2.1_g", fallback: "[2.5 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.impaling.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
@@ -201,7 +201,7 @@ data modify storage catalog:registry pages."enchantment/power" set value { \
       content: {translate: "catalog.desc.enchantment.power.2", fallback: "+%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["50", "75", "100", "125", "150", "175", "200", "225", "250", "275"], \
+          type: "compute", formula: "catalog:formula/enchantment/power", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.power.2.1_g", fallback: "[25 + (25 * lvl)]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.power.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
@@ -219,7 +219,7 @@ data modify storage catalog:registry pages."enchantment/density" set value { \
       content: {translate: "catalog.desc.enchantment.density.2", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5"], \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/0.5", \
           generic: {translate: "catalog.desc.enchantment.density.2.1_g", fallback: "[0.5 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.density.2.2", fallback: "Damage dealt per block fallen", color: "#f0f0f0"}} \
@@ -253,7 +253,7 @@ data modify storage catalog:registry pages."enchantment/piercing" set value { \
       content: {translate: "catalog.desc.enchantment.piercing.2", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.piercing.2.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.piercing.2.2", fallback: "Piercing level", color: "#f0f0f0"}} \
@@ -271,7 +271,7 @@ data modify storage catalog:registry pages."enchantment/sweeping_edge" set value
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.5", "0.67", "0.75", "0.8", "0.83", "0.86", "0.88", "0.89", "0.9", "0.91"], \
+          type: "compute", formula: "catalog:formula/enchantment/sweeping_edge", \
           generic: {translate: "catalog.desc.enchantment.sweeping_edge.1.1_g", fallback: "[lvl / (1 + lvl)]"} \
         }, \
         {value: {translate: "attribute.name.sweeping_damage_ratio", color: "#ccccff"}} \
@@ -288,7 +288,7 @@ data modify storage catalog:registry pages."enchantment/multishot" set value { \
       content: {translate: "catalog.desc.enchantment.multishot.1", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20"], \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/2", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.multishot.1.1_g", fallback: "[2 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.multishot.1.2", fallback: "Projectiles shot", color: "#f0f0f0"}} \
@@ -329,7 +329,7 @@ data modify storage catalog:registry pages."enchantment/knockback" set value { \
       content: {translate: "catalog.desc.enchantment.knockback.1", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.knockback.1.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.knockback.1.2", fallback: "Knockback dealt", color: "#f0f0f0"}} \
@@ -347,7 +347,7 @@ data modify storage catalog:registry pages."enchantment/punch" set value { \
       content: {translate: "catalog.desc.enchantment.punch.2", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.punch.2.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.punch.2.2", fallback: "Knockback dealt", color: "#f0f0f0"}} \
@@ -365,8 +365,7 @@ data modify storage catalog:registry pages."enchantment/protection" set value { 
       content: {translate: "catalog.desc.enchantment.protection.1", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["4", "8", "12", "16", "20", "24", "28", "32", "36", "40", "44", "48", "52", "56", "60", "64", "68", "72", "76"], \
-          fallback: "80", \
+          type: "compute", formula: "catalog:formula/enchantment/protection", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.protection.1.1_g", fallback: "[4 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.protection.1.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -385,8 +384,8 @@ data modify storage catalog:registry pages."enchantment/blast_protection" set va
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.15", "0.3", "0.45", "0.6", "0.75", "0.9"], \
-          fallback: "1", \
+          type: "lookup", values: [0.15, 0.3, 0.45, 0.6, 0.75, 0.9], \
+          fallback: 1, \
           generic: {translate: "catalog.desc.enchantment.blast_protection.1.1_g", fallback: "[0.15 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.explosion_knockback_resistance", color: "#ccccff"}} \
@@ -398,8 +397,8 @@ data modify storage catalog:registry pages."enchantment/blast_protection" set va
       content: {translate: "catalog.desc.enchantment.blast_protection.3", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["8", "16", "24", "32", "40", "48", "56", "64", "72"], \
-          fallback: "80", \
+          type: "lookup", values: [8, 16, 24, 32, 40, 48, 56, 64, 72], \
+          fallback: 80, \
           generic: {translate: "catalog.desc.enchantment.blast_protection.3.1_g", fallback: "[8 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.blast_protection.3.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -418,8 +417,8 @@ data modify storage catalog:registry pages."enchantment/fire_protection" set val
       content: {translate: "attribute.modifier.take.1", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["15", "30", "45", "60", "75", "90"], \
-          fallback: "100", \
+          type: "lookup", values: [15, 30, 45, 60, 75, 90], \
+          fallback: 100, \
           generic: {translate: "catalog.desc.enchantment.fire_protection.1.1_g", fallback: "[15 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.burning_time", color: "#ccccff"}} \
@@ -431,8 +430,8 @@ data modify storage catalog:registry pages."enchantment/fire_protection" set val
       content: {translate: "catalog.desc.enchantment.fire_protection.3", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["8", "16", "24", "32", "40", "48", "56", "64", "72"], \
-          fallback: "80", \
+          type: "lookup", values: [8, 16, 24, 32, 40, 48, 56, 64, 72], \
+          fallback: 80, \
           generic: {translate: "catalog.desc.enchantment.fire_protection.3.1_g", fallback: "[8 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.fire_protection.3.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -452,8 +451,8 @@ data modify storage catalog:registry pages."enchantment/projectile_protection" s
       content: {translate: "catalog.desc.enchantment.projectile_protection.2", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["8", "16", "24", "32", "40", "48", "56", "64", "72"], \
-          fallback: "80", \
+          type: "lookup", values: [8, 16, 24, 32, 40, 48, 56, 64, 72], \
+          fallback: 80, \
           generic: {translate: "catalog.desc.enchantment.projectile_protection.2.1_g", fallback: "[8 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.projectile_protection.2.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -473,8 +472,8 @@ data modify storage catalog:registry pages."enchantment/feather_falling" set val
       content: {translate: "catalog.desc.enchantment.feather_falling.2", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["12", "24", "36", "48", "60", "72"], \
-          fallback: "80", \
+          type: "lookup", values: [12, 24, 36, 48, 60, 72], \
+          fallback: 80, \
           generic: {translate: "catalog.desc.enchantment.feather_falling.2.1_g", fallback: "[12 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.feather_falling.2.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -516,7 +515,7 @@ data modify storage catalog:registry pages."enchantment/luck_of_the_sea" set val
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.luck_of_the_sea.2.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.luck", color: "#ccccff"}} \
@@ -534,7 +533,7 @@ data modify storage catalog:registry pages."enchantment/efficiency" set value { 
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["2", "5", "10", "17", "26", "37", "50", "65", "82", "101"], \
+          type: "compute", formula: "catalog:formula/enchantment/efficiency", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.efficiency.1.1_g", fallback: "[1 + (lvl)²]"} \
         }, \
         {value: {translate: "attribute.name.mining_efficiency", color: "#ccccff"}} \
@@ -551,8 +550,8 @@ data modify storage catalog:registry pages."enchantment/quick_charge" set value 
       content: {translate: "catalog.desc.enchantment.quick_charge.1", fallback: "-%ss %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.25", "0.5", "0.75", "1"], \
-          fallback: "1.25", \
+          type: "lookup", values: [0.25, 0.5, 0.75, 1], \
+          fallback: 1.25, \
           generic: {translate: "catalog.desc.enchantment.quick_charge.1.1_g", fallback: "[0.25 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.quick_charge.1.2", fallback: "Crossbow charging time", color: "#f0f0f0"}} \
@@ -574,7 +573,7 @@ data modify storage catalog:registry pages."enchantment/lure" set value { \
           type: "wrapped", base: {translate: "catalog.desc.enchantment.lure.1", fallback: "-%ss %s"}, \
           with_override: [ \
             { \
-              type: "lookup", values: ["5", "10", "15", "20", "25"], \
+              type: "lookup", values: [5, 10, 15, 20, 25], \
               generic: "<never>" \
             }, \
             {value: {translate: "catalog.desc.enchantment.lure.1.2", fallback: "Fish bite time", color: "#f0f0f0"}} \
@@ -606,7 +605,7 @@ data modify storage catalog:registry pages."enchantment/respiration" set value {
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.respiration.1.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.oxygen_bonus", color: "#ccccff"}} \
@@ -624,7 +623,7 @@ data modify storage catalog:registry pages."enchantment/aqua_affinity" set value
       content: {translate: "attribute.modifier.plus.2", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["400", "800", "1200", "1600", "2000", "2400", "2800", "3200", "3600", "4000"], \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/400", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.aqua_affinity.1.1_g", fallback: "[400 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.submerged_mining_speed", color: "#ccccff"}} \
@@ -644,7 +643,7 @@ data modify storage catalog:registry pages."enchantment/soul_speed" set value { 
       content: {translate: "attribute.modifier.plus.1", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["40.5", "51", "61.5", "72", "82.5", "93", "103.5", "114", "124.5", "135"], \
+          type: "compute", formula: "catalog:formula/enchantment/soul_speed", \
           generic: {translate: "catalog.desc.enchantment.soul_speed.3.1_g", fallback: "[30 + (10.5 * lvl)]"} \
         }, \
         {value: {translate: "attribute.name.movement_speed", color: "#ccccff"}} \
@@ -663,8 +662,8 @@ data modify storage catalog:registry pages."enchantment/swift_sneak" set value {
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.15", "0.3", "0.45", "0.6"], \
-          fallback: "0.7", \
+          type: "lookup", values: [0.15, 0.3, 0.45, 0.6], \
+          fallback: 0.7, \
           generic: {translate: "catalog.desc.enchantment.swift_sneak.1.1_g", fallback: "[0.15 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.sneaking_speed", color: "#ccccff"}} \
@@ -682,8 +681,8 @@ data modify storage catalog:registry pages."enchantment/depth_strider" set value
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.33", "0.67"], \
-          fallback: "1", \
+          type: "lookup", values: [0.33, 0.67], \
+          fallback: 1, \
           generic: {translate: "catalog.desc.enchantment.depth_strider.1.1_g", fallback: "[lvl / 3]"} \
         }, \
         {value: {translate: "attribute.name.water_movement_efficiency", color: "#ccccff"}} \
@@ -702,7 +701,7 @@ data modify storage catalog:registry pages."enchantment/thorns" set value { \
       content: {translate: "catalog.desc.enchantment.thorns.2", fallback: "%s chance:", color: "#ccb17a"}, \
       with_override: [{ \
         type: "lookup", values: ["15%", "30%", "45%", "60%", "75%", "90%"], \
-        fallback: "100", \
+        fallback: "100%", \
         generic: {translate: "catalog.desc.enchantment.thorns.2.1_g", fallback: "[15 * lvl]%%"}, \
         base_style: {color: "#ffff88"} \
       }] \
@@ -808,7 +807,7 @@ data modify storage catalog:registry pages."effect/absorption" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["4", "8", "12", "16", "20", "24"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/4", mode: "integer", \
           generic: {translate: "catalog.desc.effect.absorption.1.1_g", fallback: "[4 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.max_absorption", color: "#ccccff"}} \
@@ -819,7 +818,7 @@ data modify storage catalog:registry pages."effect/absorption" set value { \
       prefix: "c+a", \
       content: {translate: "catalog.desc.effect.absorption.3", fallback: "Restores absorption amount to %s"}, \
       with_override: [{ \
-        type: "lookup", values: ["4", "8", "12", "16", "20", "24"], \
+        type: "compute", formula: "catalog:formula/effect/scaled/4", mode: "integer", \
         generic: {translate: "catalog.desc.effect.absorption.3.1_g", fallback: "[4 * lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -896,7 +895,7 @@ data modify storage catalog:registry pages."effect/conduit_power" set value { \
       content: {translate: "attribute.modifier.plus.1", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["20", "40", "60", "80", "100", "120"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/20", mode: "integer", \
           generic: {translate: "catalog.desc.effect.conduit_power.1.1_g", fallback: "[20 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.block_break_speed", color: "#ccccff"}} \
@@ -951,7 +950,7 @@ data modify storage catalog:registry pages."effect/haste" set value { \
       content: {translate: "attribute.modifier.plus.2", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["10", "20", "30", "40", "50", "60"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/10", mode: "integer", \
           generic: {translate: "catalog.desc.effect.haste.1.1_g", fallback: "[10 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.attack_speed", color: "#ccccff"}} \
@@ -962,7 +961,7 @@ data modify storage catalog:registry pages."effect/haste" set value { \
       content: {translate: "attribute.modifier.plus.1", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["20", "40", "60", "80", "100", "120"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/20", mode: "integer", \
           generic: {translate: "catalog.desc.effect.haste.2.1_g", fallback: "[20 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.block_break_speed", color: "#ccccff"}} \
@@ -986,7 +985,7 @@ data modify storage catalog:registry pages."effect/health_boost" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["4", "8", "12", "16", "20", "24"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/4", mode: "integer", \
           generic: {translate: "catalog.desc.effect.health_boost.1.1_g", fallback: "[4 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.max_health", color: "#ccccff"}} \
@@ -1043,7 +1042,7 @@ data modify storage catalog:registry pages."effect/instant_damage" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.2", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: ["6", "12", "24", "48", "96", "192"], \
+        type: "compute", formula: "catalog:formula/effect/instant_damage/regular", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_damage.2.1_g", fallback: "[3 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1053,7 +1052,7 @@ data modify storage catalog:registry pages."effect/instant_damage" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.4", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: ["4", "8", "16", "32", "64", "128"], \
+        type: "compute", formula: "catalog:formula/effect/instant_health/regular", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_damage.4.1_g", fallback: "[2 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1069,7 +1068,7 @@ data modify storage catalog:registry pages."effect/instant_damage/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.2", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: ["3", "6", "12", "24", "48", "96"], \
+        type: "compute", formula: "catalog:formula/effect/instant_damage/lingering", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_damage.2.1_g_lingering", fallback: "[1.5 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1079,7 +1078,7 @@ data modify storage catalog:registry pages."effect/instant_damage/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.4", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: ["2", "4", "8", "16", "32", "64"], \
+        type: "compute", formula: "catalog:formula/effect/instant_health/lingering", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_damage.4.1_g_lingering", fallback: "[2 ^ lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1095,7 +1094,7 @@ data modify storage catalog:registry pages."effect/instant_health" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.2", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: ["4", "8", "16", "32", "64", "128"], \
+        type: "compute", formula: "catalog:formula/effect/instant_health/regular", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_health.2.1_g", fallback: "[2 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1105,7 +1104,7 @@ data modify storage catalog:registry pages."effect/instant_health" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.4", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: ["6", "12", "24", "48", "96", "192"], \
+        type: "compute", formula: "catalog:formula/effect/instant_damage/regular", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_health.4.1_g", fallback: "[3 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1121,7 +1120,7 @@ data modify storage catalog:registry pages."effect/instant_health/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.2", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: ["2", "4", "8", "16", "32", "64"], \
+        type: "compute", formula: "catalog:formula/effect/instant_health/lingering", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_health.2.1_g_lingering", fallback: "[2 ^ lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1131,7 +1130,7 @@ data modify storage catalog:registry pages."effect/instant_health/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.4", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: ["3", "6", "12", "24", "48", "96"], \
+        type: "compute", formula: "catalog:formula/effect/instant_damage/lingering", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_health.4.1_g_lingering", fallback: "[1.5 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1150,7 +1149,7 @@ data modify storage catalog:registry pages."effect/invisibility" set value { \
       prefix: "d", \
       content: { \
         translate: "attribute.modifier.take.2", \
-        with: ["100", {translate: "attribute.name.waypoint_transmit_range"}], \
+        with: [100, {translate: "attribute.name.waypoint_transmit_range"}], \
         color: "#cccccc" \
       } \
     } \
@@ -1165,7 +1164,7 @@ data modify storage catalog:registry pages."effect/jump_boost" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/0.1", \
           generic: {translate: "catalog.desc.effect.jump_boost.1.1_g", fallback: "[0.1 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.jump_strength", color: "#ccccff"}} \
@@ -1176,7 +1175,7 @@ data modify storage catalog:registry pages."effect/jump_boost" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6"], \
+          type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
           generic: {translate: "catalog.desc.effect.jump_boost.2.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.safe_fall_distance", color: "#ccccff"}} \
@@ -1201,7 +1200,7 @@ data modify storage catalog:registry pages."effect/luck" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6"], \
+          type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
           generic: {translate: "catalog.desc.effect.luck.1.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.luck", color: "#ccccff"}} \
@@ -1210,7 +1209,6 @@ data modify storage catalog:registry pages."effect/luck" set value { \
   ], \
   context_type: "effect", button_color: 5882118 \
 }
-# Lookup table has reflected MC-279819
 data modify storage catalog:registry pages."effect/mining_fatigue" set value { \
   title: {translate: "effect.minecraft.mining_fatigue", color: "red"}, \
   lines: [ \
@@ -1219,7 +1217,7 @@ data modify storage catalog:registry pages."effect/mining_fatigue" set value { \
       content: {translate: "attribute.modifier.take.2", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["10", "20", "30", "40", "50", "60"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/10", mode: "integer", \
           generic: {translate: "catalog.desc.effect.mining_fatigue.1.1_g", fallback: "[10 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.attack_speed", color: "#ffcccc"}} \
@@ -1230,8 +1228,7 @@ data modify storage catalog:registry pages."effect/mining_fatigue" set value { \
       content: {translate: "attribute.modifier.take.1", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["70", "91", "99.73"], \
-          fallback: "99.92", \
+          type: "compute", formula: "catalog:formula/effect/mining_fatigue/block_break_speed", \
           generic: {translate: "catalog.desc.effect.mining_fatigue.2.1_g", fallback: "[(1 - (0.3 ^ lvl)) * 100]"} \
         }, \
         {value: {translate: "attribute.name.block_break_speed", color: "#ffcccc"}} \
@@ -1288,8 +1285,8 @@ data modify storage catalog:registry pages."effect/raid_omen" set value { \
       prefix: "c+a", \
       content: {translate: "catalog.desc.effect.raid_omen.2", fallback: "Starts a raid (Level %s)"}, \
       with_override: [{ \
-        type: "lookup", values: ["1", "2", "3", "4"], \
-        fallback: "5", \
+        type: "lookup", values: [1, 2, 3, 4], \
+        fallback: 5, \
         generic: {translate: "catalog.desc.effect.raid_omen.2.1_g", fallback: "[lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1322,8 +1319,8 @@ data modify storage catalog:registry pages."effect/resistance" set value { \
       content: {translate: "catalog.desc.effect.resistance.1", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["20", "40", "60", "80"], \
-          fallback: "100", \
+          type: "lookup", values: [20, 40, 60, 80], \
+          fallback: 100, \
           generic: {translate: "catalog.desc.effect.resistance.1.1_g", fallback: "[20 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.effect.resistance.1.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -1339,7 +1336,7 @@ data modify storage catalog:registry pages."effect/saturation" set value { \
       prefix: "d", \
       content: {translate: "catalog.desc.effect.saturation.1", fallback: "Replenishes %s food point"}, \
       with_override: [{ \
-        type: "lookup", values: ["1", "2", "3", "4", "5", "6"], \
+        type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
         generic: {translate: "catalog.desc.effect.saturation.1.1_g", fallback: "[lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1348,7 +1345,7 @@ data modify storage catalog:registry pages."effect/saturation" set value { \
       prefix: "d", \
       content: {translate: "catalog.desc.effect.saturation.2", fallback: "Replenishes %s food saturation"}, \
       with_override: [{ \
-        type: "lookup", values: ["2", "4", "6", "8", "10", "12"], \
+        type: "compute", formula: "catalog:formula/effect/scaled/2", mode: "integer", \
         generic: {translate: "catalog.desc.effect.saturation.2.1_g", fallback: "[2 * lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1363,7 +1360,7 @@ data modify storage catalog:registry pages."effect/saturation/lingering" set val
       prefix: "d", \
       content: {translate: "catalog.desc.effect.saturation.1", fallback: "Replenishes %s food point"}, \
       with_override: [{ \
-        type: "lookup", values: ["0.5", "1", "1.5", "2", "2.5", "3"], \
+        type: "compute", formula: "catalog:formula/effect/scaled/0.5", \
         generic: {translate: "catalog.desc.effect.saturation.1.1_g_lingering", fallback: "[0.5 * lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1372,7 +1369,7 @@ data modify storage catalog:registry pages."effect/saturation/lingering" set val
       prefix: "d", \
       content: {translate: "catalog.desc.effect.saturation.2", fallback: "Replenishes %s food saturation"}, \
       with_override: [{ \
-        type: "lookup", values: ["1", "2", "3", "4", "5", "6"], \
+        type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
         generic: {translate: "catalog.desc.effect.saturation.2.1_g_lingering", fallback: "[lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1388,8 +1385,8 @@ data modify storage catalog:registry pages."effect/slowness" set value { \
       content: {translate: "attribute.modifier.take.2", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["15", "30", "45", "60", "75", "90"], \
-          fallback: "100", \
+          type: "lookup", values: [15, 30, 45, 60, 75, 90], \
+          fallback: 100, \
           generic: {translate: "catalog.desc.effect.slowness.1.1_g", fallback: "[15 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.movement_speed", color: "#ffcccc"}} \
@@ -1414,7 +1411,7 @@ data modify storage catalog:registry pages."effect/speed" set value { \
       content: {translate: "attribute.modifier.plus.2", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["20", "40", "60", "80", "100", "120"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/20", mode: "integer", \
           generic: {translate: "catalog.desc.effect.speed.1.1_g", fallback: "[20 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.movement_speed", color: "#ccccff"}} \
@@ -1431,7 +1428,7 @@ data modify storage catalog:registry pages."effect/strength" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["3", "6", "9", "12", "15", "18"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/3", mode: "integer", \
           generic: {translate: "catalog.desc.effect.strength.1.1_g", fallback: "[3 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.attack_damage", color: "#ccccff"}} \
@@ -1455,7 +1452,7 @@ data modify storage catalog:registry pages."effect/unluck" set value { \
       content: {translate: "attribute.modifier.take.0", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["1", "2", "3", "4", "5", "6"], \
+          type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
           generic: {translate: "catalog.desc.effect.unluck.1.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.luck", color: "#ffcccc"}} \
@@ -1480,7 +1477,7 @@ data modify storage catalog:registry pages."effect/weakness" set value { \
       content: {translate: "attribute.modifier.take.0", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["4", "8", "12", "16", "20", "24"], \
+          type: "compute", formula: "catalog:formula/effect/scaled/4", mode: "integer", \
           generic: {translate: "catalog.desc.effect.weakness.1.1_g", fallback: "[4 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.attack_damage", color: "#ffcccc"}} \
@@ -1497,7 +1494,7 @@ data modify storage catalog:registry pages."effect/weaving" set value { \
       content: { \
         translate: "catalog.desc.effect.weaving.1", fallback: "-%s%% %s", \
         with: [ \
-          "50", \
+          50, \
           {translate: "catalog.desc.effect.weaving.1.2", fallback: "Slowdown effect of Cobweb", color: "#f0f0f0"} \
         ], \
         color: "#8888ff" \

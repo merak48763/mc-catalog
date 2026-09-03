@@ -1,5 +1,5 @@
 {
-  "function": "set_custom_data",
+  "type": "set_custom_data",
   "tag": {
     "catalog/book": {"state": "idle"}
   }

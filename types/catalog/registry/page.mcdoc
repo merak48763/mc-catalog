@@ -1,5 +1,6 @@
 use ::java::util::text::Text
 use ::java::util::text::TranslatedText
+use ::java::util::text::TranslationArg
 use ::java::util::text::TextStyle
 use super::PrefixKey
 
@@ -12,7 +13,8 @@ struct PageRegistry {
 struct PageRegistryEntry {
   /// Defaults to `none`.
   context_type?: ContextType,
-  /// Defaults to `4603950`.
+  /// Defaults to `4603950` (`0x46402e`).
+  #[deprecated="26.3"]
   button_color?: #[color="composite_rgb"] int,
   /// Title of the page. \
   /// The default style is white & non-italic.
@@ -24,8 +26,6 @@ struct PageRegistryEntry {
   /// **Note:** prefix is also affected.
   base_style?: TextStyle,
 }
-
-//type DescriptionLine = [PrefixKey, Text]
 
 struct DescriptionLine {
   /// Defaults to `empty`.
@@ -46,23 +46,38 @@ struct BaseFormattableInsertion {
 }
 
 dispatch catalog:insertion[%none, text] to struct TextInsertion {
-  value: Text,
+  value: TranslationArg,
 }
 
 dispatch catalog:insertion[lookup] to struct LookupInsertion {
   /// Value to use when the context is empty.
-  generic: Text,
+  generic: TranslationArg,
   /// When the context is provided, the corresponding value in the list is selected.
-  values: [Text],
+  values: [TranslationArg],
   /// Value to use when there is no matching value in `values`. \
   /// If not present, `generic` is used instead.
-  fallback?: Text,
+  fallback?: TranslationArg,
   ...BaseFormattableInsertion,
 }
 
+#[since="26.3"]
+dispatch catalog:insertion[compute] to struct ComputeInsertion {
+  /// Value to use when the context is empty.
+  generic: TranslationArg,
+  /// Defaults to `float`.
+  mode?: ComputeMode,
+  /// Number provider to compute the value. Inlined number provider is not allowed. \
+  /// Context is available in `catalog:context` number provider (both int and float).
+  formula: catalog:compute_formula[[mode]],
+  ...BaseFormattableInsertion,
+}
+
+dispatch catalog:compute_formula["float", %none] to #[id="context_float_provider"] string
+dispatch catalog:compute_formula[integer] to #[id="context_int_provider"] string
+
 dispatch catalog:insertion[branch] to struct BranchInsertion {
   /// Value to use when the context is empty.
-  generic: Text,
+  generic: TranslationArg,
   /// The value to compare with the provided context.
   threshold: int,
   /// Insertion to use when context ≤ threshold. \
@@ -91,8 +106,14 @@ enum(string) ContextType {
 enum(string) InsertionType {
   TextComponent = "text",
   ValueLookup = "lookup",
+  #[since="26.3"] Compute = "compute",
   Branch = "branch",
   Wrapped = "wrapped",
   EffectAmplifier = "effect_amplifier",
   EnchantmentLevel = "enchantment_level",
+}
+
+enum(string) ComputeMode {
+  Float = "float",
+  Integer = "integer",
 }

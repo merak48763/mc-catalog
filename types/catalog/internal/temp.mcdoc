@@ -1,6 +1,8 @@
 use ::java::util::text::Text
+use ::java::util::text::TranslationArg
 use super::super::registry::page::PageRegistryEntry
 use super::super::registry::page::LookupInsertion
+use super::super::registry::page::ComputeInsertion
 use super::super::registry::page::BranchInsertion
 use super::super::registry::page::WrappedInsertion
 use super::super::registry::page::BaseFormattableInsertion
@@ -17,12 +19,14 @@ struct TempDataMap {
     /// Spyglass type check workaround
     lookup?: LookupInsertion,
     /// Spyglass type check workaround
+    compute?: ComputeInsertion,
+    /// Spyglass type check workaround
     branch?: BranchInsertion,
     /// Spyglass type check workaround
     wrapped?: WrappedInsertion,
     /// Spyglass type check workaround
     formattable?: BaseFormattableInsertion,
     /// Unformatted output before applying style override
-    raw_result?: Text,
+    raw_result?: TranslationArg,
   },
 }

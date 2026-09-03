@@ -1,0 +1,4 @@
+{
+  "type": "mul",
+  "inputs": [0.5, "catalog:formula/effect/level"]
+}

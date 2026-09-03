@@ -2,6 +2,15 @@
   "pack": {
     "description": {"text": ""},
     "min_format": 94,
-    "max_format": [107, 1]
+    "max_format": [119, 0]
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "polyfill-107",
+        "min_format": 94,
+        "max_format": [107, 1]
+      }
+    ]
   }
 }

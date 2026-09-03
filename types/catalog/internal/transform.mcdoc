@@ -1,4 +1,5 @@
 use ::java::util::text::Text
+use ::java::util::text::TranslationArg
 use ::java::world::item::ItemStack
 use super::super::index::PageIndex
 use super::super::registry::page::Insertion
@@ -13,9 +14,9 @@ struct TransformIOMap {
   /// Page index → baked book page
   bake_page?: Transform<PageIndex, BakedPage>,
   /// Insertion definition list → insertion text list
-  resolve_insertions?: Transform<[Insertion], [Text]>,
+  resolve_insertions?: Transform<[Insertion], [TranslationArg]>,
   /// Insertion definition → insertion text
-  single_insertion?: Transform<Insertion, Text>,
+  single_insertion?: Transform<Insertion, TranslationArg>,
 }
 
 type Transform<I, O> = struct {
