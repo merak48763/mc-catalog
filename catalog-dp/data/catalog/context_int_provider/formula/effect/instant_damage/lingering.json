@@ -1,0 +1,11 @@
+{
+  "type": "mul",
+  "inputs": [
+    3,
+    {
+      "type": "pow",
+      "base": 2,
+      "exponent": "catalog:formula/effect/fract_32/amplifier"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "type": "add",
+  "inputs": [1, "catalog:formula/effect/fract_32/amplifier"]
+}

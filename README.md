@@ -106,7 +106,7 @@ Generates effect amplifier text based on **Context Value**.
 - `generic` \[Text component\]: The text to insert if **Context Value** is not present.
 - `mode` \[Optional string\]: The mode to resolve the number. Defaults to `float`.
   - `"float"`: `formula` is a context float provider.
-  - `"int"`: `formula` is a context int provider.
+  - `"integer"`: `formula` is a context int provider.
 
 ### Examples
 

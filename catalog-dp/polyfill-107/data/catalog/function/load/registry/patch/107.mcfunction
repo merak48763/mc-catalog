@@ -44,6 +44,11 @@ data modify storage catalog:registry pages."enchantment/piercing".lines[1].with_
     type: "lookup", \
     values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] \
   }
+data modify storage catalog:registry pages."enchantment/sweeping_edge".lines[1].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [0.5, 0.67, 0.75, 0.8, 0.83, 0.86, 0.88, 0.89, 0.9, 0.91] \
+  }
 data modify storage catalog:registry pages."enchantment/multishot".lines[0].with_override[0] \
   merge value { \
     type: "lookup", \
@@ -121,6 +126,46 @@ data modify storage catalog:registry pages."effect/health_boost".lines[0].with_o
   merge value { \
     type: "lookup", \
     values: [4, 8, 12, 16, 20, 24] \
+  }
+data modify storage catalog:registry pages."effect/instant_damage".lines[1].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [6, 12, 24, 48, 96, 192] \
+  }
+data modify storage catalog:registry pages."effect/instant_damage".lines[3].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [4, 8, 16, 32, 64, 128] \
+  }
+data modify storage catalog:registry pages."effect/instant_damage/lingering".lines[1].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [3, 6, 12, 24, 48, 96] \
+  }
+data modify storage catalog:registry pages."effect/instant_damage/lingering".lines[3].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [2, 4, 8, 16, 32, 64] \
+  }
+data modify storage catalog:registry pages."effect/instant_health".lines[1].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [4, 8, 16, 32, 64, 128] \
+  }
+data modify storage catalog:registry pages."effect/instant_health".lines[3].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [6, 12, 24, 48, 96, 192] \
+  }
+data modify storage catalog:registry pages."effect/instant_health/lingering".lines[1].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [2, 4, 8, 16, 32, 64] \
+  }
+data modify storage catalog:registry pages."effect/instant_health/lingering".lines[3].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [3, 6, 12, 24, 48, 96] \
   }
 data modify storage catalog:registry pages."effect/jump_boost".lines[0].with_override[0] \
   merge value { \

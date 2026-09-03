@@ -271,7 +271,7 @@ data modify storage catalog:registry pages."enchantment/sweeping_edge" set value
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.5", "0.67", "0.75", "0.8", "0.83", "0.86", "0.88", "0.89", "0.9", "0.91"], \
+          type: "compute", formula: "catalog:formula/enchantment/sweeping_edge", \
           generic: {translate: "catalog.desc.enchantment.sweeping_edge.1.1_g", fallback: "[lvl / (1 + lvl)]"} \
         }, \
         {value: {translate: "attribute.name.sweeping_damage_ratio", color: "#ccccff"}} \
@@ -384,7 +384,7 @@ data modify storage catalog:registry pages."enchantment/blast_protection" set va
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.15", "0.3", "0.45", "0.6", "0.75", "0.9"], \
+          type: "lookup", values: [0.15, 0.3, 0.45, 0.6, 0.75, 0.9], \
           fallback: 1, \
           generic: {translate: "catalog.desc.enchantment.blast_protection.1.1_g", fallback: "[0.15 * lvl]"} \
         }, \
@@ -662,8 +662,8 @@ data modify storage catalog:registry pages."enchantment/swift_sneak" set value {
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.15", "0.3", "0.45", "0.6"], \
-          fallback: "0.7", \
+          type: "lookup", values: [0.15, 0.3, 0.45, 0.6], \
+          fallback: 0.7, \
           generic: {translate: "catalog.desc.enchantment.swift_sneak.1.1_g", fallback: "[0.15 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.sneaking_speed", color: "#ccccff"}} \
@@ -681,7 +681,7 @@ data modify storage catalog:registry pages."enchantment/depth_strider" set value
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["0.33", "0.67"], \
+          type: "lookup", values: [0.33, 0.67], \
           fallback: 1, \
           generic: {translate: "catalog.desc.enchantment.depth_strider.1.1_g", fallback: "[lvl / 3]"} \
         }, \
@@ -1042,7 +1042,7 @@ data modify storage catalog:registry pages."effect/instant_damage" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.2", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: [6, 12, 24, 48, 96, 192], \
+        type: "compute", formula: "catalog:formula/effect/instant_damage/regular", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_damage.2.1_g", fallback: "[3 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1052,7 +1052,7 @@ data modify storage catalog:registry pages."effect/instant_damage" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.4", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: [4, 8, 16, 32, 64, 128], \
+        type: "compute", formula: "catalog:formula/effect/instant_health/regular", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_damage.4.1_g", fallback: "[2 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1068,7 +1068,7 @@ data modify storage catalog:registry pages."effect/instant_damage/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.2", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: [3, 6, 12, 24, 48, 96], \
+        type: "compute", formula: "catalog:formula/effect/instant_damage/lingering", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_damage.2.1_g_lingering", fallback: "[1.5 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1078,7 +1078,7 @@ data modify storage catalog:registry pages."effect/instant_damage/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_damage.4", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: [2, 4, 8, 16, 32, 64], \
+        type: "compute", formula: "catalog:formula/effect/instant_health/lingering", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_damage.4.1_g_lingering", fallback: "[2 ^ lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1094,7 +1094,7 @@ data modify storage catalog:registry pages."effect/instant_health" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.2", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: [4, 8, 16, 32, 64, 128], \
+        type: "compute", formula: "catalog:formula/effect/instant_health/regular", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_health.2.1_g", fallback: "[2 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1104,7 +1104,7 @@ data modify storage catalog:registry pages."effect/instant_health" set value { \
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.4", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: [6, 12, 24, 48, 96, 192], \
+        type: "compute", formula: "catalog:formula/effect/instant_damage/regular", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_health.4.1_g", fallback: "[3 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1120,7 +1120,7 @@ data modify storage catalog:registry pages."effect/instant_health/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.2", fallback: "Heals %s HP"}, \
       with_override: [{ \
-        type: "lookup", values: [2, 4, 8, 16, 32, 64], \
+        type: "compute", formula: "catalog:formula/effect/instant_health/lingering", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_health.2.1_g_lingering", fallback: "[2 ^ lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1130,7 +1130,7 @@ data modify storage catalog:registry pages."effect/instant_health/lingering" set
       prefix: "d+d", \
       content: {translate: "catalog.desc.effect.instant_health.4", fallback: "Inflicts %s magic damage"}, \
       with_override: [{ \
-        type: "lookup", values: [3, 6, 12, 24, 48, 96], \
+        type: "compute", formula: "catalog:formula/effect/instant_damage/lingering", mode: "integer", \
         generic: {translate: "catalog.desc.effect.instant_health.4.1_g_lingering", fallback: "[1.5 * (2 ^ lvl)]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
