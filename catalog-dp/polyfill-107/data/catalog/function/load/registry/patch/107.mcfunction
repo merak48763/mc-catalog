@@ -1,10 +1,3 @@
-# Reflect MC-279819
-data modify storage catalog:registry pages."effect/mining_fatigue".lines[1].with_override[0] \
-  merge value { \
-    values: ["70", "91", "99.73"], \
-    fallback: "99.92" \
-  }
-
 # Enchantment lookup table
 data modify storage catalog:registry pages."enchantment/frost_walker".lines[4].with_override[0] \
   merge value { \
@@ -132,7 +125,7 @@ data modify storage catalog:registry pages."effect/health_boost".lines[0].with_o
 data modify storage catalog:registry pages."effect/jump_boost".lines[0].with_override[0] \
   merge value { \
     type: "lookup", \
-    values: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6"] \
+    values: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6] \
   }
 data modify storage catalog:registry pages."effect/jump_boost".lines[1].with_override[0] \
   merge value { \
@@ -148,6 +141,13 @@ data modify storage catalog:registry pages."effect/mining_fatigue".lines[0].with
   merge value { \
     type: "lookup", \
     values: [10, 20, 30, 40, 50, 60] \
+  }
+# Reflects MC-279819
+data modify storage catalog:registry pages."effect/mining_fatigue".lines[1].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [70, 91, 99.73], \
+    fallback: 99.92 \
   }
 data modify storage catalog:registry pages."effect/saturation".lines[0].with_override[0] \
   merge value { \
