@@ -2,7 +2,7 @@
   "pack": {
     "description": {"text": ""},
     "min_format": 94,
-    "max_format": [118, 0]
+    "max_format": [119, 0]
   },
   "overlays": {
     "entries": [

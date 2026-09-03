@@ -64,14 +64,16 @@ dispatch catalog:insertion[lookup] to struct LookupInsertion {
 dispatch catalog:insertion[compute] to struct ComputeInsertion {
   /// Value to use when the context is empty.
   generic: TranslationArg,
+  /// Defaults to `float`.
+  mode?: ComputeMode,
   /// Number provider to compute the value. Inlined number provider is not allowed. \
-  /// Context is available in `catalog:context` number provider.
-  formula: #[id="number_provider"] string,
-  /// Whether to resolve the formula in integer mode. \
-  /// Defaults to `false`.
-  use_int_mode?: boolean,
+  /// Context is available in `catalog:context` number provider (both int and float).
+  formula: catalog:compute_formula[[mode]],
   ...BaseFormattableInsertion,
 }
+
+dispatch catalog:compute_formula["float", %none] to #[id="context_float_provider"] string
+dispatch catalog:compute_formula[integer] to #[id="context_int_provider"] string
 
 dispatch catalog:insertion[branch] to struct BranchInsertion {
   /// Value to use when the context is empty.
@@ -109,4 +111,9 @@ enum(string) InsertionType {
   Wrapped = "wrapped",
   EffectAmplifier = "effect_amplifier",
   EnchantmentLevel = "enchantment_level",
+}
+
+enum(string) ComputeMode {
+  Float = "float",
+  Integer = "integer",
 }

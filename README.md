@@ -101,10 +101,12 @@ Generates effect amplifier text based on **Context Value**.
 
 \[Since 26.3\]
 
-- `formula` \[Number provider ID\]: The number provider to compute the insertion value.
-  - The **Context Value** is provided by `catalog:context` number provider.
+- `formula` \[Number provider ID\]: The context float/int provider to compute the insertion value.
+  - The **Context Value** is provided by `catalog:context` context float/int provider.
 - `generic` \[Text component\]: The text to insert if **Context Value** is not present.
-- `use_int_mode` \[Optional boolean\]: Whether to resolve the formula in integer mode. Defaults to `false`.
+- `mode` \[Optional string\]: The mode to resolve the number. Defaults to `float`.
+  - `"float"`: `formula` is a context float provider.
+  - `"int"`: `formula` is a context int provider.
 
 ### Examples
 

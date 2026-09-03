@@ -71,7 +71,7 @@ data modify storage catalog:registry pages."enchantment/frost_walker" set value 
       prefix: "c+a", \
       content: {translate: "catalog.desc.enchantment.frost_walker.4", fallback: "Frosts water surface within %s blocks"}, \
       with_override: [{ \
-        type: "compute", formula: "catalog:formula/enchantment/frost_walker", use_int_mode: true, \
+        type: "compute", formula: "catalog:formula/enchantment/frost_walker", mode: "integer", \
         generic: {translate: "catalog.desc.enchantment.frost_walker.4.1_g", fallback: "[2 + lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -91,7 +91,7 @@ data modify storage catalog:registry pages."enchantment/lunge" set value { \
       content: {translate: "catalog.desc.enchantment.lunge.5", fallback: "Consumes %s food point%s"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:context", use_int_mode: true, \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.lunge.5.1_g", fallback: "[lvl]"}, \
           base_style: {color: "#ff88ff"} \
         }, \
@@ -201,7 +201,7 @@ data modify storage catalog:registry pages."enchantment/power" set value { \
       content: {translate: "catalog.desc.enchantment.power.2", fallback: "+%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/enchantment/power", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/enchantment/power", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.power.2.1_g", fallback: "[25 + (25 * lvl)]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.power.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
@@ -253,7 +253,7 @@ data modify storage catalog:registry pages."enchantment/piercing" set value { \
       content: {translate: "catalog.desc.enchantment.piercing.2", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:context", use_int_mode: true, \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.piercing.2.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.piercing.2.2", fallback: "Piercing level", color: "#f0f0f0"}} \
@@ -288,7 +288,7 @@ data modify storage catalog:registry pages."enchantment/multishot" set value { \
       content: {translate: "catalog.desc.enchantment.multishot.1", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/enchantment/scaled/2", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/2", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.multishot.1.1_g", fallback: "[2 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.multishot.1.2", fallback: "Projectiles shot", color: "#f0f0f0"}} \
@@ -329,7 +329,7 @@ data modify storage catalog:registry pages."enchantment/knockback" set value { \
       content: {translate: "catalog.desc.enchantment.knockback.1", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:context", use_int_mode: true, \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.knockback.1.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.knockback.1.2", fallback: "Knockback dealt", color: "#f0f0f0"}} \
@@ -347,7 +347,7 @@ data modify storage catalog:registry pages."enchantment/punch" set value { \
       content: {translate: "catalog.desc.enchantment.punch.2", fallback: "+%s %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:context", use_int_mode: true, \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.punch.2.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.punch.2.2", fallback: "Knockback dealt", color: "#f0f0f0"}} \
@@ -365,7 +365,7 @@ data modify storage catalog:registry pages."enchantment/protection" set value { 
       content: {translate: "catalog.desc.enchantment.protection.1", fallback: "-%s%% %s", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/enchantment/protection", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/enchantment/protection", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.protection.1.1_g", fallback: "[4 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.protection.1.2", fallback: "Damage taken", color: "#f0f0f0"}} \
@@ -515,7 +515,7 @@ data modify storage catalog:registry pages."enchantment/luck_of_the_sea" set val
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:context", use_int_mode: true, \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.luck_of_the_sea.2.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.luck", color: "#ccccff"}} \
@@ -533,7 +533,7 @@ data modify storage catalog:registry pages."enchantment/efficiency" set value { 
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/enchantment/efficiency", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/enchantment/efficiency", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.efficiency.1.1_g", fallback: "[1 + (lvl)²]"} \
         }, \
         {value: {translate: "attribute.name.mining_efficiency", color: "#ccccff"}} \
@@ -605,7 +605,7 @@ data modify storage catalog:registry pages."enchantment/respiration" set value {
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:context", use_int_mode: true, \
+          type: "compute", formula: "catalog:context", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.respiration.1.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.oxygen_bonus", color: "#ccccff"}} \
@@ -623,7 +623,7 @@ data modify storage catalog:registry pages."enchantment/aqua_affinity" set value
       content: {translate: "attribute.modifier.plus.2", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/enchantment/scaled/400", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/400", mode: "integer", \
           generic: {translate: "catalog.desc.enchantment.aqua_affinity.1.1_g", fallback: "[400 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.submerged_mining_speed", color: "#ccccff"}} \
@@ -807,7 +807,7 @@ data modify storage catalog:registry pages."effect/absorption" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/4", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/4", mode: "integer", \
           generic: {translate: "catalog.desc.effect.absorption.1.1_g", fallback: "[4 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.max_absorption", color: "#ccccff"}} \
@@ -818,7 +818,7 @@ data modify storage catalog:registry pages."effect/absorption" set value { \
       prefix: "c+a", \
       content: {translate: "catalog.desc.effect.absorption.3", fallback: "Restores absorption amount to %s"}, \
       with_override: [{ \
-        type: "compute", formula: "catalog:formula/effect/scaled/4", use_int_mode: true, \
+        type: "compute", formula: "catalog:formula/effect/scaled/4", mode: "integer", \
         generic: {translate: "catalog.desc.effect.absorption.3.1_g", fallback: "[4 * lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -895,7 +895,7 @@ data modify storage catalog:registry pages."effect/conduit_power" set value { \
       content: {translate: "attribute.modifier.plus.1", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/20", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/20", mode: "integer", \
           generic: {translate: "catalog.desc.effect.conduit_power.1.1_g", fallback: "[20 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.block_break_speed", color: "#ccccff"}} \
@@ -950,7 +950,7 @@ data modify storage catalog:registry pages."effect/haste" set value { \
       content: {translate: "attribute.modifier.plus.2", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/10", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/10", mode: "integer", \
           generic: {translate: "catalog.desc.effect.haste.1.1_g", fallback: "[10 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.attack_speed", color: "#ccccff"}} \
@@ -961,7 +961,7 @@ data modify storage catalog:registry pages."effect/haste" set value { \
       content: {translate: "attribute.modifier.plus.1", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/20", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/20", mode: "integer", \
           generic: {translate: "catalog.desc.effect.haste.2.1_g", fallback: "[20 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.block_break_speed", color: "#ccccff"}} \
@@ -985,7 +985,7 @@ data modify storage catalog:registry pages."effect/health_boost" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/4", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/4", mode: "integer", \
           generic: {translate: "catalog.desc.effect.health_boost.1.1_g", fallback: "[4 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.max_health", color: "#ccccff"}} \
@@ -1175,7 +1175,7 @@ data modify storage catalog:registry pages."effect/jump_boost" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/level", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
           generic: {translate: "catalog.desc.effect.jump_boost.2.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.safe_fall_distance", color: "#ccccff"}} \
@@ -1200,7 +1200,7 @@ data modify storage catalog:registry pages."effect/luck" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/level", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
           generic: {translate: "catalog.desc.effect.luck.1.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.luck", color: "#ccccff"}} \
@@ -1217,7 +1217,7 @@ data modify storage catalog:registry pages."effect/mining_fatigue" set value { \
       content: {translate: "attribute.modifier.take.2", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/10", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/10", mode: "integer", \
           generic: {translate: "catalog.desc.effect.mining_fatigue.1.1_g", fallback: "[10 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.attack_speed", color: "#ffcccc"}} \
@@ -1228,7 +1228,7 @@ data modify storage catalog:registry pages."effect/mining_fatigue" set value { \
       content: {translate: "attribute.modifier.take.1", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "lookup", values: ["70", "91", "97.3", "99.19", "99.76", "99.93"], \
+          type: "compute", formula: "catalog:formula/effect/mining_fatigue/block_break_speed", \
           generic: {translate: "catalog.desc.effect.mining_fatigue.2.1_g", fallback: "[(1 - (0.3 ^ lvl)) * 100]"} \
         }, \
         {value: {translate: "attribute.name.block_break_speed", color: "#ffcccc"}} \
@@ -1336,7 +1336,7 @@ data modify storage catalog:registry pages."effect/saturation" set value { \
       prefix: "d", \
       content: {translate: "catalog.desc.effect.saturation.1", fallback: "Replenishes %s food point"}, \
       with_override: [{ \
-        type: "compute", formula: "catalog:formula/effect/level", use_int_mode: true, \
+        type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
         generic: {translate: "catalog.desc.effect.saturation.1.1_g", fallback: "[lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1345,7 +1345,7 @@ data modify storage catalog:registry pages."effect/saturation" set value { \
       prefix: "d", \
       content: {translate: "catalog.desc.effect.saturation.2", fallback: "Replenishes %s food saturation"}, \
       with_override: [{ \
-        type: "compute", formula: "catalog:formula/effect/scaled/2", use_int_mode: true, \
+        type: "compute", formula: "catalog:formula/effect/scaled/2", mode: "integer", \
         generic: {translate: "catalog.desc.effect.saturation.2.1_g", fallback: "[2 * lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1369,7 +1369,7 @@ data modify storage catalog:registry pages."effect/saturation/lingering" set val
       prefix: "d", \
       content: {translate: "catalog.desc.effect.saturation.2", fallback: "Replenishes %s food saturation"}, \
       with_override: [{ \
-        type: "compute", formula: "catalog:formula/effect/level", use_int_mode: true, \
+        type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
         generic: {translate: "catalog.desc.effect.saturation.2.1_g_lingering", fallback: "[lvl]"}, \
         base_style: {color: "#ff88ff"} \
       }] \
@@ -1411,7 +1411,7 @@ data modify storage catalog:registry pages."effect/speed" set value { \
       content: {translate: "attribute.modifier.plus.2", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/20", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/20", mode: "integer", \
           generic: {translate: "catalog.desc.effect.speed.1.1_g", fallback: "[20 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.movement_speed", color: "#ccccff"}} \
@@ -1428,7 +1428,7 @@ data modify storage catalog:registry pages."effect/strength" set value { \
       content: {translate: "attribute.modifier.plus.0", color: "#8888ff"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/3", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/3", mode: "integer", \
           generic: {translate: "catalog.desc.effect.strength.1.1_g", fallback: "[3 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.attack_damage", color: "#ccccff"}} \
@@ -1452,7 +1452,7 @@ data modify storage catalog:registry pages."effect/unluck" set value { \
       content: {translate: "attribute.modifier.take.0", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/level", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/level", mode: "integer", \
           generic: {translate: "catalog.desc.effect.unluck.1.1_g", fallback: "[lvl]"} \
         }, \
         {value: {translate: "attribute.name.luck", color: "#ffcccc"}} \
@@ -1477,7 +1477,7 @@ data modify storage catalog:registry pages."effect/weakness" set value { \
       content: {translate: "attribute.modifier.take.0", color: "#ff8888"}, \
       with_override: [ \
         { \
-          type: "compute", formula: "catalog:formula/effect/scaled/4", use_int_mode: true, \
+          type: "compute", formula: "catalog:formula/effect/scaled/4", mode: "integer", \
           generic: {translate: "catalog.desc.effect.weakness.1.1_g", fallback: "[4 * lvl]"} \
         }, \
         {value: {translate: "attribute.name.attack_damage", color: "#ffcccc"}} \

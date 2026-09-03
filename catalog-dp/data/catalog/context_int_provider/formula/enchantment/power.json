@@ -1,0 +1,10 @@
+{
+  "type": "add",
+  "inputs": [
+    25,
+    {
+      "type": "mul",
+      "inputs": [25, "catalog:context"]
+    }
+  ]
+}
