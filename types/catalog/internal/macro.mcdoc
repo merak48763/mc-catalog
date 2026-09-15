@@ -1,5 +1,6 @@
 use super::super::registry::PageKey
 use super::super::registry::PrefixKey
+use super::super::registry::page::ComputeMode
 
 struct MacroParamMap {
   /// - `catalog:baked_books/delete`
@@ -20,6 +21,11 @@ struct MacroParamMap {
   /// - `catalog:util/single_insertion/lookup/select_text/from_lut`
   list_access?: struct {
     index?: int,
+  },
+  /// - `catalog:util/single_insertion/compute/select_text/resolve_number`
+  resolve_number?: struct {
+    mode?: ComputeMode,
+    number_provider?: catalog:compute_formula[[mode]],
   },
   /// - `catalog:util/get_item_name/from_base_color/translate`
   shield_name?: struct {

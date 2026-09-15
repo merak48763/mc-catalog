@@ -1,0 +1,4 @@
+{
+  "type": "add",
+  "inputs": [0.5, "catalog:formula/enchantment/scaled/0.5"]
+}

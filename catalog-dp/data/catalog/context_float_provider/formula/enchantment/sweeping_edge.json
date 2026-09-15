@@ -1,0 +1,21 @@
+{
+  "type": "div",
+  "left": {
+    "type": "round",
+    "input": {
+      "type": "mul",
+      "inputs": [
+        100,
+        {
+          "type": "div",
+          "left": "catalog:context",
+          "right": {
+            "type": "add",
+            "inputs": [1, "catalog:context"]
+          }
+        }
+      ]
+    }
+  },
+  "right": 100
+}

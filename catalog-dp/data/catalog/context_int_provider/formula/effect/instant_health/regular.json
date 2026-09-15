@@ -1,0 +1,8 @@
+{
+  "type": "pow",
+  "base": 2,
+  "exponent": {
+    "type": "add",
+    "inputs": [2, "catalog:formula/effect/fract_32/amplifier"]
+  }
+}

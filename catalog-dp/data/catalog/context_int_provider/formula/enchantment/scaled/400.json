@@ -1,0 +1,4 @@
+{
+  "type": "mul",
+  "inputs": [400, "catalog:context"]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "add",
+  "inputs": [
+    1,
+    {
+      "type": "pow",
+      "base": "catalog:context",
+      "exponent": 2
+    }
+  ]
+}

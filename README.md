@@ -5,7 +5,7 @@
 ![The Universe Cat](doc_images/murcat.png)
 
 Adapted from the Lexica module of [pearuhdox/Cartographer-2.0](https://github.com/pearuhdox/Cartographer-2.0).  
-Target Minecraft version: 1.21.11 ~ 26.2  
+Target Minecraft version: 1.21.11 ~ 26.3  
 Check `v1.4.4` tag for legacy version.
 
 # Showcase
@@ -49,6 +49,7 @@ Data register should happen in `#catalog:register_data` function tag.
     - `"enchantment_lv1"`: Similar to `enchantment`. Title reflects the behavior of enchantment with max level 1.
     - `"effect"`: Title and contents may change based on a value starting from 0 (effect amplifier).
   - `button_color` \[Optional int\]: The color of GUI element, which uses `filled_map` item model. Defaults to `0x46402e` (defined in the item model).
+    - Starting from 26.3, this field is not useful anymore because the color is not visible without a resource pack.
 
 ### Line Object
 
@@ -96,7 +97,20 @@ Generates effect amplifier text based on **Context Value**.
 
 - `base_style` \[Optional text style\]: The style to apply on the generated text.
 
-### Example
+#### When `type: "compute"`:
+
+\[Since 26.3\]
+
+- `formula` \[Number provider ID\]: The context float/int provider to compute the insertion value.
+  - The **Context Value** is provided by `catalog:context` context float/int provider.
+- `generic` \[Text component\]: The text to insert if **Context Value** is not present.
+- `mode` \[Optional string\]: The mode to resolve the number. Defaults to `float`.
+  - `"float"`: `formula` is a context float provider.
+  - `"integer"`: `formula` is a context int provider.
+
+### Examples
+
+#### 26.2
 
 ```mcfunction
 # Defines the description of Smite enchantment
@@ -110,6 +124,30 @@ data modify storage catalog:registry pages."enchantment/smite" set value { \
       with_override: [ \
         { \
           type: "lookup", values: ["2.5", "5", "7.5", "10", "12.5", "15", "17.5", "20", "22.5", "25"], \
+          generic: {translate: "catalog.desc.enchantment.smite.2.1_g", fallback: "[2.5 * lvl]"} \
+        }, \
+        {value: {translate: "catalog.desc.enchantment.smite.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
+      ] \
+    } \
+  ], \
+  context_type: "enchantment", button_color: 11141375 \
+}
+```
+
+#### 26.3
+
+```mcfunction
+# Defines the description of Smite enchantment
+data modify storage catalog:registry pages."enchantment/smite" set value { \
+  title: {translate: "enchantment.minecraft.smite", color: "#cc88ff"}, \
+  lines: [ \
+    {prefix: "c", content: {translate: "catalog.desc.enchantment.smite.1", fallback: "When attacking undead mobs:", color: "#ccb17a"}}, \
+    { \
+      prefix: "c+a", \
+      content: {translate: "catalog.desc.enchantment.smite.2", fallback: "+%s %s", color: "#8888ff"}, \
+      with_override: [ \
+        { \
+          type: "compute", formula: "catalog:formula/enchantment/scaled/2.5", \
           generic: {translate: "catalog.desc.enchantment.smite.2.1_g", fallback: "[2.5 * lvl]"} \
         }, \
         {value: {translate: "catalog.desc.enchantment.smite.2.2", fallback: "Damage dealt", color: "#f0f0f0"}} \
@@ -250,12 +288,15 @@ The resource pack provides additional features:
 - All texts in this pack are translatable.
 - You can find two translation categories:
   - `assets/catalog/lang/`: Core texts.
-  - `assets/catalog.desc/lang`: Description texts.
+  - `assets/catalog.desc/lang/`: Description texts.
 
 ## Customize Button Texture
 
-- Regular buttons use `filled_map` item model.
-  - The description name is passed into `custom_model_data.strings[0]`
+- \[Until 26.3\] Regular buttons use `filled_map` item model.  
+  \[Since 26.3\] Regular buttons use `map` item model.
+  - The description name is passed into `custom_model_data.strings[0]`.
+  - \[Until 26.3\] Button color is passed into `map_color`.
+  - \[Since 26.3\] Button color is passed into `custom_model_data.colors[0]`.
 - "Next page" button uses `feather` item model.
 - "No information" button uses `barrier` item model.
 

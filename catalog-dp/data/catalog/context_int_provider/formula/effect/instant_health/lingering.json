@@ -1,0 +1,8 @@
+{
+  "type": "pow",
+  "base": 2,
+  "exponent": {
+    "type": "add",
+    "inputs": "catalog:formula/effect/fract_32/level"
+  }
+}

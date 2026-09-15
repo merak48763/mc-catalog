@@ -6,9 +6,9 @@
         {
           "type": "item",
           "name": "bundle",
-          "functions": [
+          "modifier": [
             {
-              "function": "set_components",
+              "type": "set_components",
               "components": {
                 "item_name": {"translate": "catalog.book", "fallback": "Book of the Universe Cat", "color": "#88ff88"},
                 "item_model": "writable_book",
@@ -19,10 +19,7 @@
                 }
               }
             },
-            {
-              "function": "reference",
-              "name": "catalog:empty_book"
-            }
+            "catalog:empty_book"
           ]
         }
       ]

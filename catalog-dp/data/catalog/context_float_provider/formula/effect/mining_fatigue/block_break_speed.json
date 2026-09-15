@@ -1,0 +1,28 @@
+{
+  "type": "min",
+  "inputs": [
+    99.99,
+    {
+      "type": "div",
+      "left": {
+        "type": "round",
+        "input": {
+          "type": "mul",
+          "inputs": [
+            10000,
+            {
+              "type": "sub",
+              "left": 1,
+              "right": {
+                "type": "pow",
+                "base": 0.3,
+                "exponent": "catalog:formula/effect/level"
+              }
+            }
+          ]
+        }
+      },
+      "right": 100
+    }
+  ]
+}

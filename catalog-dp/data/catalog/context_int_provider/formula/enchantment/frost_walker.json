@@ -1,0 +1,4 @@
+{
+  "type": "add",
+  "inputs": [2, "catalog:context"]
+}
