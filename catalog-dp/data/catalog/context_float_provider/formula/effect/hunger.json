@@ -1,0 +1,12 @@
+{
+  "type": "div",
+  "left": {
+    "type": "round",
+    "input": {
+      "type": "div",
+      "left": 800,
+      "right": "catalog:formula/effect/level"
+    }
+  },
+  "right": 20
+}
