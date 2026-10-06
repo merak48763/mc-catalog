@@ -935,6 +935,19 @@ data modify storage catalog:registry pages."effect/fire_resistance" set value { 
   ], \
   button_color: 16750848 \
 }
+data modify storage catalog:registry pages."effect/freezing" set value { \
+  title: {translate: "effect.minecraft.freezing", color: "red"}, \
+  lines: [ \
+    {prefix: "d", content: {translate: "catalog.desc.effect.freezing.1", fallback: "Freezes over time:"}}, \
+    {prefix: "d+d", content: {translate: "catalog.desc.effect.freezing.2", fallback: "Reduces movement speed"}}, \
+    {prefix: "d+c", content: {translate: "catalog.desc.effect.freezing.3", fallback: "When affected for ≥ 7 seconds:", color: "#ccb17a"}}, \
+    {prefix: "dc+c", content: {translate: "catalog.desc.effect.freezing.4", fallback: "Every 2 seconds:", color: "#ccb17a"}}, \
+    {prefix: "dcc+a", content: {translate: "catalog.desc.effect.freezing.5", fallback: "Inflicts 1.5 freezing damage"}}, \
+    {prefix: "d+c", content: {translate: "catalog.desc.effect.freezing.6", fallback: "When in Lava or Fire:", color: "#ccb17a"}}, \
+    {prefix: "dc+a", content: {translate: "catalog.desc.effect.freezing.7", fallback: "Resets freezing timer to 0"}} \
+  ], \
+  button_color: 10415854 \
+}
 data modify storage catalog:registry pages."effect/glowing" set value { \
   title: {translate: "effect.minecraft.glowing", color: "red"}, \
   lines: [ \
@@ -1014,10 +1027,10 @@ data modify storage catalog:registry pages."effect/hunger" set value { \
   lines: [ \
     { \
       prefix: "c", \
-      content: {translate: "catalog.desc.effect.hunger.1", fallback: "Every %s:", color: "#ccb17a"}, \
+      content: {translate: "catalog.desc.effect.hunger.1", fallback: "Every %s seconds:", color: "#ccb17a"}, \
       with_override: [{ \
-        type: "lookup", values: ["00:40", "00:20", "00:13.35", "00:10", "00:08", "00:06.7"], \
-        generic: {translate: "catalog.desc.effect.hunger.1.1_g", fallback: "[40 / lvl] seconds"}, \
+        type: "compute", formula: "catalog:formula/effect/hunger", \
+        generic: {translate: "catalog.desc.effect.hunger.1.1_g", fallback: "[40 / lvl]"}, \
         base_style: {color: "#ffff88"} \
       }] \
     }, \
@@ -1264,11 +1277,11 @@ data modify storage catalog:registry pages."effect/poison" set value { \
   lines: [ \
     { \
       prefix: "c", \
-      content: {translate: "catalog.desc.effect.poison.1", fallback: "Every %s:", color: "#ccb17a"}, \
+      content: {translate: "catalog.desc.effect.poison.1", fallback: "Every %s seconds:", color: "#ccb17a"}, \
       with_override: [{ \
-        type: "lookup", values: ["00:01.25", "00:00.6", "00:00.6", "00:00.6"], \
-        fallback: "00:00.5", \
-        generic: {translate: "catalog.desc.effect.poison.1.1_g", fallback: "[2.5 * (0.5 ^ lvl)] seconds"}, \
+        type: "lookup", values: [1.25, 0.6, 0.6, 0.6], \
+        fallback: 0.5, \
+        generic: {translate: "catalog.desc.effect.poison.1.1_g", fallback: "[2.5 * (0.5 ^ lvl)]"}, \
         base_style: {color: "#ffff88"} \
       }] \
     }, \
@@ -1299,11 +1312,11 @@ data modify storage catalog:registry pages."effect/regeneration" set value { \
   lines: [ \
     { \
       prefix: "c", \
-      content: {translate: "catalog.desc.effect.regeneration.1", fallback: "Every %s:", color: "#ccb17a"}, \
+      content: {translate: "catalog.desc.effect.regeneration.1", fallback: "Every %s seconds:", color: "#ccb17a"}, \
       with_override: [{ \
-        type: "lookup", values: ["00:02.5", "00:01.25", "00:00.6", "00:00.3", "00:00.15"], \
-        fallback: "00:00.05", \
-        generic: {translate: "catalog.desc.effect.regeneration.1.1_g", fallback: "[5 * (0.5 ^ lvl)] seconds"}, \
+        type: "lookup", values: [2.5, 1.25, 0.6, 0.3, 0.15], \
+        fallback: 0.05, \
+        generic: {translate: "catalog.desc.effect.regeneration.1.1_g", fallback: "[5 * (0.5 ^ lvl)]"}, \
         base_style: {color: "#ffff88"} \
       }] \
     }, \
@@ -1518,13 +1531,19 @@ data modify storage catalog:registry pages."effect/wither" set value { \
   lines: [ \
     { \
       prefix: "c", \
-      content: {translate: "catalog.desc.effect.wither.1", fallback: "Every %s:", color: "#ccb17a"}, \
-      with_override: [{ \
-        type: "lookup", values: ["00:02", "00:01"], \
-        fallback: "00:00.5", \
-        generic: {translate: "catalog.desc.effect.wither.1.1_g", fallback: "[4 * (0.5 ^ lvl)] seconds"}, \
-        base_style: {color: "#ffff88"} \
-      }] \
+      content: {translate: "catalog.desc.effect.wither.1", fallback: "Every %s second%s:", color: "#ccb17a"}, \
+      with_override: [ \
+        { \
+          type: "lookup", values: [2, 1], \
+          fallback: 0.5, \
+          generic: {translate: "catalog.desc.effect.wither.1.1_g", fallback: "[4 * (0.5 ^ lvl)]"}, \
+          base_style: {color: "#ffff88"} \
+        }, \
+        { \
+          type: "lookup", "values": [{translate: "catalog.desc.effect.wither.1.pl.2", fallback: "s"}, ""], \
+          generic: {translate: "catalog.desc.effect.wither.1.pl.2", fallback: "s"} \
+        } \
+      ] \
     }, \
     {prefix: "c+a", content: {translate: "catalog.desc.effect.wither.2", fallback: "Inflicts 1 wither damage"}} \
   ], \

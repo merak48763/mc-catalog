@@ -1,8 +1,8 @@
 {
   "pack": {
-    "description": {"text": ""},
+    "description": {"text": "https://github.com/merak48763/mc-catalog"},
     "min_format": 75,
-    "max_format": [97, 1]
+    "max_format": [100, 0]
   },
   "overlays": {
     "entries": [
