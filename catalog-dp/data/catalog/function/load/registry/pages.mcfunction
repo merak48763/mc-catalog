@@ -935,6 +935,19 @@ data modify storage catalog:registry pages."effect/fire_resistance" set value { 
   ], \
   button_color: 16750848 \
 }
+data modify storage catalog:registry pages."effect/freezing" set value { \
+  title: {translate: "effect.minecraft.freezing", color: "red"}, \
+  lines: [ \
+    {prefix: "d", content: {translate: "catalog.desc.effect.freezing.1", fallback: "Freezes over time:"}}, \
+    {prefix: "d+d", content: {translate: "catalog.desc.effect.freezing.2", fallback: "Reduces movement speed"}}, \
+    {prefix: "d+c", content: {translate: "catalog.desc.effect.freezing.3", fallback: "When affected for ≥ 7 seconds:", color: "#ccb17a"}}, \
+    {prefix: "dc+c", content: {translate: "catalog.desc.effect.freezing.4", fallback: "Every 2 seconds:", color: "#ccb17a"}}, \
+    {prefix: "dcc+a", content: {translate: "catalog.desc.effect.freezing.5", fallback: "Inflicts 1.5 freezing damage"}}, \
+    {prefix: "d+c", content: {translate: "catalog.desc.effect.freezing.6", fallback: "When in Lava or Fire:", color: "#ccb17a"}}, \
+    {prefix: "dc+a", content: {translate: "catalog.desc.effect.freezing.7", fallback: "Resets freezing timer to 0"}}, \
+  ], \
+  button_color: 10415854 \
+}
 data modify storage catalog:registry pages."effect/glowing" set value { \
   title: {translate: "effect.minecraft.glowing", color: "red"}, \
   lines: [ \
