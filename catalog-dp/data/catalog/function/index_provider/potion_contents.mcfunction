@@ -6,6 +6,7 @@ execute if items entity @s contents *[potion_contents~{potions: "#catalog:leapin
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:fire_resistance"}] run function catalog:index_provider/potion_contents/fire_resistance
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:swiftness"}] run function catalog:index_provider/potion_contents/swiftness
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:slowness"}] run function catalog:index_provider/potion_contents/slowness
+execute if items entity @s contents *[potion_contents~{potions: "#catalog:turtle_master"}] run function catalog:index_provider/potion_contents/turtle_master
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:water_breathing"}] run function catalog:index_provider/potion_contents/water_breathing
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:healing"}] run function catalog:index_provider/potion_contents/healing
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:harming"}] run function catalog:index_provider/potion_contents/harming
@@ -14,9 +15,9 @@ execute if items entity @s contents *[potion_contents~{potions: "#catalog:regene
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:strength"}] run function catalog:index_provider/potion_contents/strength
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:weakness"}] run function catalog:index_provider/potion_contents/weakness
 execute if items entity @s contents *[potion_contents~{potions: "luck"}] run function catalog:index_provider/potion_contents/luck
-execute if items entity @s contents *[potion_contents~{potions: "#catalog:turtle_master"}] run function catalog:index_provider/potion_contents/turtle_master
 execute if items entity @s contents *[potion_contents~{potions: "#catalog:slow_falling"}] run function catalog:index_provider/potion_contents/slow_falling
-execute if items entity @s contents *[potion_contents~{potions: "infested"}] run function catalog:index_provider/potion_contents/infested
-execute if items entity @s contents *[potion_contents~{potions: "oozing"}] run function catalog:index_provider/potion_contents/oozing
-execute if items entity @s contents *[potion_contents~{potions: "weaving"}] run function catalog:index_provider/potion_contents/weaving
 execute if items entity @s contents *[potion_contents~{potions: "wind_charged"}] run function catalog:index_provider/potion_contents/wind_charged
+execute if items entity @s contents *[potion_contents~{potions: "weaving"}] run function catalog:index_provider/potion_contents/weaving
+execute if items entity @s contents *[potion_contents~{potions: "oozing"}] run function catalog:index_provider/potion_contents/oozing
+execute if items entity @s contents *[potion_contents~{potions: "infested"}] run function catalog:index_provider/potion_contents/infested
+execute if items entity @s contents *[potion_contents~{potions: "#catalog:freezing"}] run function catalog:index_provider/potion_contents/freezing

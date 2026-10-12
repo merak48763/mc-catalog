@@ -7,12 +7,16 @@ dispatch catalog:keys/prefix[
   "d",
   "c+a",
   "c+c",
+  "d+c",
   "d+d",
   "ca+d",
   "cc+a",
   "cc+d",
+  "dc+a",
+  "dc+c",
   "cca+d",
   "ccd+d",
+  "dcc+a",
 ] to ()
 
 dispatch catalog:keys/page[
@@ -139,3 +143,6 @@ dispatch catalog:keys/page[
   "keyword/enchantable/vanishing",
   "keyword/enchantable/weapon",
 ] to ()
+
+#[since="26.4"]
+dispatch catalog:keys/page["effect/freezing"] to ()

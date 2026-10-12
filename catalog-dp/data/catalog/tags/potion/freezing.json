@@ -1,0 +1,6 @@
+{
+  "values": [
+    {"id": "freezing", "required": false},
+    {"id": "long_freezing", "required": false}
+  ]
+}

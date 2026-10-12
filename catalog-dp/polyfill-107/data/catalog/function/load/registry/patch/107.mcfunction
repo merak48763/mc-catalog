@@ -127,6 +127,11 @@ data modify storage catalog:registry pages."effect/health_boost".lines[0].with_o
     type: "lookup", \
     values: [4, 8, 12, 16, 20, 24] \
   }
+data modify storage catalog:registry pages."effect/hunger".lines[0].with_override[0] \
+  merge value { \
+    type: "lookup", \
+    values: [40, 20, 13.35, 10, 8, 6.7] \
+  }
 data modify storage catalog:registry pages."effect/instant_damage".lines[1].with_override[0] \
   merge value { \
     type: "lookup", \

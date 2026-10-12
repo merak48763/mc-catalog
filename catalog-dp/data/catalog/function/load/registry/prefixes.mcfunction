@@ -20,6 +20,11 @@ data modify storage catalog:registry prefixes.c+c set value { \
   with: [{text: "\ue001▋ \ue001", font: "catalog:space"}], \
   extra: [{text: "▋ ", color: "#ffdd99"}] \
 }
+data modify storage catalog:registry prefixes.d+c set value { \
+  translate: "catalog.fmt.wrap", fallback: "  ", \
+  with: [{text: "◆ \ue001", font: "catalog:space"}], \
+  extra: [{text: "▋ ", color: "#ffdd99"}] \
+}
 data modify storage catalog:registry prefixes.d+d set value { \
   translate: "catalog.fmt.wrap", fallback: "  ", \
   with: [{text: "◆ ", font: "catalog:space"}], \
@@ -42,6 +47,16 @@ data modify storage catalog:registry prefixes.cc+d set value { \
   with: [{text: "\ue001▋ \ue001▋ ", font: "catalog:space"}], \
   extra: [{text: "◆ ", color: "#ffdd99"}] \
 }
+data modify storage catalog:registry prefixes.dc+a set value { \
+  translate: "catalog.fmt.wrap", fallback: "    ", \
+  with: [{text: "◆ \ue001▋ ", font: "catalog:space"}], \
+  extra: [{text: "▶ ", color: "#ffdd99"}] \
+}
+data modify storage catalog:registry prefixes.dc+c set value { \
+  translate: "catalog.fmt.wrap", fallback: "    ", \
+  with: [{text: "◆ \ue001▋ \ue001", font: "catalog:space"}], \
+  extra: [{text: "▋ ", color: "#ffdd99"}] \
+}
 
 # level 3
 data modify storage catalog:registry prefixes.cca+d set value { \
@@ -53,4 +68,9 @@ data modify storage catalog:registry prefixes.ccd+d set value { \
   translate: "catalog.fmt.wrap", fallback: "      ", \
   with: [{text: "\ue001▋ \ue001▋ ◆ ", font: "catalog:space"}], \
   extra: [{text: "◆ ", color: "#ffdd99"}] \
+}
+data modify storage catalog:registry prefixes.dcc+a set value { \
+  translate: "catalog.fmt.wrap", fallback: "      ", \
+  with: [{text: "◆ \ue001▋ \ue001▋ ", font: "catalog:space"}], \
+  extra: [{text: "▶ ", color: "#ffdd99"}] \
 }
