@@ -938,13 +938,7 @@ data modify storage catalog:registry pages."effect/fire_resistance" set value { 
 data modify storage catalog:registry pages."effect/freezing" set value { \
   title: {translate: "effect.minecraft.freezing", color: "red"}, \
   lines: [ \
-    {prefix: "d", content: {translate: "catalog.desc.effect.freezing.1", fallback: "Freezes over time:"}}, \
-    {prefix: "d+d", content: {translate: "catalog.desc.effect.freezing.2", fallback: "Reduces movement speed"}}, \
-    {prefix: "d+c", content: {translate: "catalog.desc.effect.freezing.3", fallback: "When affected for ≥ 7 seconds:", color: "#ccb17a"}}, \
-    {prefix: "dc+c", content: {translate: "catalog.desc.effect.freezing.4", fallback: "Every 2 seconds:", color: "#ccb17a"}}, \
-    {prefix: "dcc+a", content: {translate: "catalog.desc.effect.freezing.5", fallback: "Inflicts 1.5 freezing damage"}}, \
-    {prefix: "d+c", content: {translate: "catalog.desc.effect.freezing.6", fallback: "When in Lava or Fire:", color: "#ccb17a"}}, \
-    {prefix: "dc+a", content: {translate: "catalog.desc.effect.freezing.7", fallback: "Resets freezing timer to 0"}} \
+    {prefix: "d", content: {translate: "catalog.desc.effect.freezing.1", fallback: "Increases freezing timer"}} \
   ], \
   button_color: 10415854 \
 }
@@ -1572,6 +1566,20 @@ data modify storage catalog:registry pages."keyword/ignited_arrow" set value { \
     {prefix: "d", content: {translate: "catalog.desc.keyword.ignited_arrow.1", fallback: "Ignites:"}}, \
     {prefix: "d+d", content: {translate: "catalog.desc.keyword.ignited_arrow.2", fallback: "Mobs hit (00:05)"}}, \
     {prefix: "d+d", content: {translate: "catalog.desc.keyword.ignited_arrow.3", fallback: "Campfires, Candles, TNT"}} \
+  ] \
+}
+data modify storage catalog:registry pages."keyword/freezing_timer" set value { \
+  title: {translate: "catalog.desc.keyword.freezing_timer", fallback: "Freezing Timer", color: "#ffff88"}, \
+  lines: [ \
+    {prefix: "d", content: {translate: "catalog.desc.keyword.freezing_timer.1", fallback: "Maximum 7 seconds"}}, \
+    {prefix: "d", content: {translate: "catalog.desc.keyword.freezing_timer.2", fallback: "Reduces movement speed over time"}}, \
+    {prefix: "c", content: {translate: "catalog.desc.keyword.freezing_timer.3", fallback: "After reaching maximum:", color: "#ccb17a"}}, \
+    {prefix: "c+c", content: {translate: "catalog.desc.keyword.freezing_timer.4", fallback: "Every 2 seconds:", color: "#ccb17a"}}, \
+    {prefix: "cc+a", content: {translate: "catalog.desc.keyword.freezing_timer.5", fallback: "Inflicts 1.5 freezing damage"}}, \
+    {prefix: "c", content: {translate: "catalog.desc.keyword.freezing_timer.6", fallback: "When either of:", color: "#ccb17a"}}, \
+    {prefix: "c+e", content: {translate: "catalog.desc.keyword.freezing_timer.7", fallback: "① In Lava or Fire", color: "#ccb17a"}}, \
+    {prefix: "c+e", content: {translate: "catalog.desc.keyword.freezing_timer.8", fallback: "② Wearing Leather armor", color: "#ccb17a"}}, \
+    {prefix: "c+a", content: {translate: "catalog.desc.keyword.freezing_timer.9", fallback: "Resets to 0 seconds"}} \
   ] \
 }
 data modify storage catalog:registry pages."keyword/lingering_potion" set value { \

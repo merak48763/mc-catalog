@@ -243,6 +243,19 @@ When both `context` and `linked` are not present, the **Index** can be reduced t
 - `{id: "enchantment/smite", context: 5}`
 - `{id: "enchantment/bane_of_arthropods", context: 5, linked: [{id: "effect/slowness", context: 3}]}`
 
+## "Is Installed" Check
+
+\[Since 26.3\]
+
+This predicate can check if this pack is installed.
+
+```json
+{
+  "type": "any_of",
+  "terms": "#catalog:installed"
+}
+```
+
 # Palette
 
 There are the colors used by the builtin descriptions.
