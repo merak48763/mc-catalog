@@ -1576,10 +1576,10 @@ data modify storage catalog:registry pages."keyword/freezing_timer" set value { 
     {prefix: "c", content: {translate: "catalog.desc.keyword.freezing_timer.3", fallback: "After reaching maximum:", color: "#ccb17a"}}, \
     {prefix: "c+c", content: {translate: "catalog.desc.keyword.freezing_timer.4", fallback: "Every 2 seconds:", color: "#ccb17a"}}, \
     {prefix: "cc+a", content: {translate: "catalog.desc.keyword.freezing_timer.5", fallback: "Inflicts 1.5 freezing damage"}}, \
-    {prefix: "c", content: {translate: "catalog.desc.keyword.freezing_timer.6", fallback: "When either of:", color: "#ccb17a"}}, \
-    {prefix: "c+e", content: {translate: "catalog.desc.keyword.freezing_timer.7", fallback: "① In Lava or Fire", color: "#ccb17a"}}, \
-    {prefix: "c+e", content: {translate: "catalog.desc.keyword.freezing_timer.8", fallback: "② Wearing Leather armor", color: "#ccb17a"}}, \
-    {prefix: "c+a", content: {translate: "catalog.desc.keyword.freezing_timer.9", fallback: "Resets to 0 seconds"}} \
+    {prefix: "c", content: {translate: "catalog.desc.keyword.freezing_timer.6", fallback: "When in Lava or Fire:", color: "#ccb17a"}}, \
+    {prefix: "c+a", content: {translate: "catalog.desc.keyword.freezing_timer.7", fallback: "Resets to 0 seconds"}}, \
+    {prefix: "c", content: {translate: "catalog.desc.keyword.freezing_timer.8", fallback: "When wearing leather armor:", color: "#ccb17a"}}, \
+    {prefix: "c+a", content: {translate: "catalog.desc.keyword.freezing_timer.9", fallback: "Timer doesn't increase"}} \
   ] \
 }
 data modify storage catalog:registry pages."keyword/lingering_potion" set value { \
